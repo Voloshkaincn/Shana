@@ -1,0 +1,22 @@
+@keyframes sliderContentHide {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+@keyframes sliderContentShow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

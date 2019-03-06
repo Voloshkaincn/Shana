@@ -1,39 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<meta name="HandheldFriendly" content="true">
-
-	<meta name="description" content="This is description">
-	<meta name="keywords" content="keywords">
-	<title>Shana</title>
-	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-	<link rel="icon" href="img/favicon.png" type="image/x-icon">
-
-	<!-- Styles -->
-		<!-- Libs -->
-			<link rel="stylesheet" type="text/css" href="css/libs.min.css">
-		<!-- Common -->
-			<link rel="stylesheet" type="text/css" href="css/main.min.css">
-
-
-	<!--[if lt IE 9]>v
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-</head>
-<body>
-	
-	<!-- START Preloader -->
-		<div id="page-preloader"><span class="spinner preloader-anim"></span></div>
-	<!-- Finish Preloader -->
-
-	<?php
-		include 'php-components/header.php';
-	?>
-
+<?php
+	include 'php-components/header.php';
+?>
+	<a href="/catalog.php" id="btnCatalog" class="btn__icon btn__icon-empty">
+		<img src="img/catalog-icon.svg" alt="catalog">
+	</a>
 	<div class="main">
 		<div id="mainSlider" class="main__slider">
 			<div class="slider__item">
@@ -87,11 +57,3 @@
 	<?php
 		include 'php-components/footer.php';
 	?>
-	
-	<!-- Scripts -->
-		<!-- Libs -->
-			<script defer src="js/libs.min.js"></script>
-		<!-- Common -->
-			<script defer src="js/common.min.js"></script>
-</body>
-</html>

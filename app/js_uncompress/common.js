@@ -5,9 +5,11 @@ $(document).ready(function() {
 		if($(this).hasClass('btn__menu-open')){
 			$(this).removeClass('btn__menu-open');
 			$('#menu').removeClass('menu__open');
+			$('.sidebar').removeClass('sidebar__show');
 		} else {
 			$(this).addClass('btn__menu-open');
 			$('#menu').addClass('menu__open');
+			$('.sidebar').addClass('sidebar__show');
 		}
 	});
 
@@ -38,7 +40,7 @@ $(document).ready(function() {
 		asNavFor: '#mainSlider',
 		speed: 900
 	});
-	$('#mainSlider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+	$('#mainSlider').on('VoloChange', function(event, slick, currentSlide, nextSlide){
 		console.log(currentSlide + ' and ' + $('#mainImgSlider').slick('slickCurrentSlide'));
 		if(currentSlide != $('#mainImgSlider').slick('slickCurrentSlide')){
 			 $('#mainImgSlider').slick('slickGoTo', currentSlide, false);

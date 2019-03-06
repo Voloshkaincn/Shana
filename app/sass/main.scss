@@ -6,6 +6,7 @@
 $main-color: #FF7A1B;
 $text-color: #111111;
 $secondary-text-color: #656565;
+$sidebar-width: 140px;
 
 body {
 	font-family: 'montserrat', sans-serif;
@@ -17,7 +18,8 @@ h1, .h1{
 	font-family: 'montserrat', sans-serif;
 	font-weight: bold;
 	font-size: 36px;
-	line-height: 1.4;
+	line-height: 1.25;
+	margin: 15px 0 20px;
 }
 h2, .h2{
 	font-family: 'montserrat', sans-serif;
@@ -33,6 +35,9 @@ h3, .h3{
 }
 p{
 	line-height: 1.4;
+}
+.overflow-hidden {
+	overflow: hidden;
 }
 .img{
 	&__full{
@@ -63,6 +68,9 @@ p{
 		border-radius: 50%;
 		text-align: center;
 		cursor: pointer;
+		display: flex;
+	    align-items: center;
+	    justify-content: center; 
 	}
 	&__icon-full{
 		background-color: $main-color;
@@ -127,11 +135,12 @@ p{
 	left: 0;
 	z-index: 9;
 	padding: 20px 10px;
-	width: 130px;
+	width: $sidebar-width;
 	&__logo {
 		margin-bottom: 40px;
 		width: 100%;
 		z-index: 9;
+		display: block;
 	}
 }
 .row{
@@ -291,12 +300,54 @@ p{
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
+	 z-index: 9;
+}
+.sidebar{
+	width: $sidebar-width;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 20px;
+	height: 100%;
+	position: fixed;
+	z-index: 7;
+	transition: all 0.5s 0s;
+	&__block{
+		padding: 10px 0;
+		margin-top: 30px;
+		&:before{
+			content: '';
+			display: block;
+			width: 32px;
+			height: 1px;
+			background-color: $main-color;
+			position: absolute;
+			top: 0;
+			left: -20px;
+			opacity: 0.4;
+		}
+	}
+	&__show{
+		z-index: 8;
+		transition: all 0.5s 0.5s;
+	}
+	&__link{
+		margin-bottom: 10px;
+		display: inline-block;
+	}
+ }
+.phone__text{
+	color: #C4C4C4;
+	font-size: 11px;
+	margin-bottom: 20px;
 }
 .main{
 	position: fixed;
 	display: flex;
 	width: 100%;
 	height: 100%;
+	background-color: #fff;
+	z-index: 7;
 	&__slider{
 		width: 50%;
 		height: 100%;
@@ -312,6 +363,7 @@ p{
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		background-color: #fff;
 	}
 	&__title{
 		text-align: center;
@@ -394,6 +446,143 @@ p{
 	-webkit-perspective: 2000;
 	-webkit-backface-visibility: hidden;
 }
+.content{
+	margin-left: $sidebar-width;
+	width: calc(100% - 140px);
+	padding-right: 20px;
+	&__header{
+		padding: 20px 40px 40px;
+	}
+	p{
+		margin: 20px 0;
+		line-height: 1.75;
+		color: #656565;
+	}
+}
+.vertical{
+	overflow: hidden;
+    height: 100vh;
+    display: flex;
+    padding: 0;
+	&__wrap{
+	    width: 65%;
+	    padding: 0 20px;
+	    overflow: auto;
+	}
+	&__bg-img {
+	    width: 45%;
+	    height: 100%;
+	    overflow: hidden;
+	}
+	&__content{
+		padding: 20px 40px 40px;
+	}
+}
+.breadcrumb{
+	font-size: 13px;
+	color: #B5B5B5;
+}
+.card{
+	position: relative;
+	padding: 10px;
+	&__name{
+		position: absolute;
+		display: inline-block;
+		bottom: 40px;
+		left: 0;
+		padding: 0 10px;
+		line-height: 35px;
+		height: 35px;
+		background-color: rgba(255,255,255,0.65);
+		font-size: 15px;
+	}
+	&__price{
+		position: absolute;
+		display: inline-block;
+		bottom: 5px;
+		left: 0;
+		padding: 0 10px;
+		line-height: 35px;
+		height: 35px;
+		background-color: rgba(255,255,255,0.65);
+		font-size: 15px;
+		&-old{
+			text-decoration: line-through;
+			margin-right: 12px;
+			font-size: 12px;
+		}
+		&-new{
+			color: #FF0000;
+		}
+	}
+	&__img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		transition: all 0.5s;
+	}
+	&__link{
+		display: block;
+	    height: 100%;
+	    overflow: hidden;
+	    &:hover{
+	    	.card__img{
+	    		width: calc(100% + 10px);
+	    		height: calc(100% + 10px);
+	    	}
+	    }
+	}
 
+}
+.catalog{
+	margin: -10px;
+	height: calc(100vh + 20px);
+	&__item{
+		position: relative;
+		padding: 10px;
+		width: 50%;
+		height: 50%;
+		&-xl{
+			width: 45%;
+			height: 100%;
+		}
+		&-h{
+			height: 100%;
+		}
+	}
+	&__block{
+		display: flex;
+		flex-wrap: wrap;
+		width: 55%;
+		height: 100%;
+	} 
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		&-lg{
+			height: calc(66vh + 10px);
+			min-height: 200px;
+		}
+		&-md{
+			height: calc(34vh + 10px);
+			min-height: 100px;
+		}
+	}
+}
+.category{
+	&__item{
+		width: 33.33333%;
+		height: calc((100vw - 140px) / 3 * 1.45);
+    	max-height: calc(100vh - 176px);
+	}
+}
+.subcategory__item{
+	width: 33.33333%;
+	height: calc((100vw - 140px) / 3);
+}
+.products__item{
+	width: 33.33333%;
+	height: calc((100vw - 140px) / 3);
+}
 
- 

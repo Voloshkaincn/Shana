@@ -1,5 +1,5 @@
 <?php
-	include 'php-components/header.php';
+	include 'header.php';
 ?>
 
 <div class="content vertical">
@@ -30,5 +30,5 @@
 </div>	
 
 <?php
-	include 'php-components/footer.php';
+	include 'footer.php';
 ?>

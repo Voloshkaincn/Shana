@@ -1,5 +1,5 @@
 <?php
-	include 'php-components/header.php';
+	include 'header.php';
 ?>
 
 <a href="/" id="btnCatalog" class="btn__icon btn__icon-empty">
@@ -68,5 +68,5 @@
 </div>	
 
 <?php
-	include 'php-components/footer.php';
+	include 'footer.php';
 ?>

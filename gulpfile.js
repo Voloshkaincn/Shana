@@ -7,7 +7,10 @@ var gulp 	 	     = require('gulp'),
 		rename       = require("gulp-rename"),
 		browserSync  = require('browser-sync'),
 		sourcemaps = require('gulp-sourcemaps'),
-		cssnano = require('gulp-cssnano');
+		cssnano = require('gulp-cssnano'),
+		iconfont = require('gulp-iconfont'),
+		iconfontCss = require('gulp-iconfont-css');
+var		fontName = 'iconfont';
 
 //Compile CSS file from Sass
 gulp.task('compileSass', function(){
@@ -31,6 +34,9 @@ gulp.task('createJsLibs', function(){
 	return gulp.src([
 			'app/libs/jquery/dist/jquery.min.js',
 			'app/libs/slick-carousel/slick.js',
+			// 'app/libs/Event/Event.js',
+			// 'app/libs/Magnifier/Magnifier.js',
+			'app/libs/Sprite-Zoom/src/jquery.spritezoom.js'
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglifyjs())
@@ -41,7 +47,7 @@ gulp.task('createJsLibs', function(){
 //Compress JSFiles
 gulp.task('compressJs', function(){
 	return gulp.src([
-			'app/js_uncompress/*.js'
+			'app/js/common.js'
 		])
 	.pipe(uglifyjs())
 	.pipe(rename({
@@ -65,10 +71,11 @@ gulp.task('browserSync', function serverStart(){
 	});
 });
 
+
 // Watch
 gulp.task('watch', gulp.parallel('code', 'compileSass', 'createJsLibs', 'compressJs', 'browserSync', function startWatching(){
 	gulp.watch('app/sass/**/*.{css,sass,scss}', gulp.parallel('compileSass'));
-	gulp.watch('app/js_uncompress/**/*.js', gulp.parallel('compressJs'));
+	gulp.watch('app/js/common.js', gulp.parallel('compressJs'));
 	gulp.watch('app/**/*.{php,html}', gulp.parallel('code'));
 }));
 

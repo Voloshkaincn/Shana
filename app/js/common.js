@@ -1,0 +1,215 @@
+$(document).ready(function() {
+
+//--------menu button-----
+	$('#menuButton').on('click', function(){
+		if($(this).hasClass('btn__menu-open')){
+			$(this).removeClass('btn__menu-open');
+			$('#menu').removeClass('menu__open');
+			$('.sidebar').removeClass('sidebar__show');
+		} else {
+			$(this).addClass('btn__menu-open');
+			$('#menu').addClass('menu__open');
+			$('.sidebar').addClass('sidebar__show');
+		}
+	});
+
+//==========search btn ===========
+	$('#formSearch').on('click', function(event){
+		event.stopPropagation();
+		$('html').one('click', function() {
+            $("#formSearch").removeClass("search__form-open");
+        });
+        $('#btnSearch').one('click', function(event) {
+            $("#formSearch").removeClass("search__form-open");
+            event.stopPropagation();
+            return false; //here must be ajax function
+        });
+		$('#formSearch').addClass('search__form-open');
+		
+		event.preventDefault();
+		return false;
+	});
+
+//---------main slider------
+	$('#mainSlider').slick({
+		infinite: true,
+		dots: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '#mainImgSlider'
+	});
+	$('.main__slider').on('wheel', (function(e) {
+	  	e.preventDefault();
+	  	if (e.originalEvent.deltaY < 0) {
+	    	$(this).slick('slickNext');
+	  	} else {
+	    	$(this).slick('slickPrev');
+	  	}
+	  }));
+	$('#mainImgSlider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		vertical: true,
+		asNavFor: '#mainSlider',
+		speed: 900
+	});
+	$('#mainSlider').on('VoloChange', function(event, slick, currentSlide, nextSlide){
+		console.log(currentSlide + ' and ' + $('#mainImgSlider').slick('slickCurrentSlide'));
+		if(currentSlide != $('#mainImgSlider').slick('slickCurrentSlide')){
+			 $('#mainImgSlider').slick('slickGoTo', currentSlide, false);
+		}
+
+	});
+
+//========tab=========
+	$('.tab').on('click', function(){
+		if(!$(this).hasClass('tab-active')){
+			$('.tab-active').removeClass('tab-active');
+			$(this).addClass('tab-active');
+			 var tab_content = $(this).data('tab');
+			$('.tab__content-active').slideUp();
+			$('#'+tab_content).slideDown().addClass('tab__content-active');
+		}
+	});
+
+//======product gallery slidery=========
+	$('.vertical__item').on('click', function(){
+		var imgId = $(this).data('id');
+		$('.bg-img__item-active').removeClass('bg-img__item-active hoverzoom__img');
+		$('#' + imgId).addClass('bg-img__item-active hoverzoom__img');
+		startZoom();
+	})
+//=========quantity====== 
+	$('<div class="quantity-button quantity-up">+</div>').insertAfter('.quantity-input');
+	$('<div class="quantity-button quantity-down">&ndash;</div>').insertBefore('.quantity-input');
+    $('.quantity').each(function() {
+	var spinner = $(this), 
+		input = spinner.find('input[type="number"]'),
+		btnUp = spinner.find('.quantity-up'),
+		btnDown = spinner.find('.quantity-down'),
+		min = input.attr('min'),
+		max = input.attr('max');
+		btnUp.click(function() {
+			var oldValue = parseFloat(input.val());
+			if (oldValue >= max) {
+				var newVal = oldValue;
+			} else {
+				var newVal = oldValue + 1;
+			}
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change");
+		});
+		btnDown.click(function() {
+			var oldValue = parseFloat(input.val());
+			if (oldValue <= min) {
+			  var newVal = oldValue;
+			} else {
+			  var newVal = oldValue - 1;
+			}
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change"); 
+		});
+    });
+
+
+    // zoom 
+	var theImage,
+    theImageImg,
+    magnifier,
+    zoomImage,
+    magnifierHeight,
+    magnifierWidth,
+    theImageWidth,
+    theImageHeight,
+    zoomImageWidth,
+    zoomImageHeight,
+    zoomW,
+    zoomH;
+
+	function startZoom(){
+		theImage = $('.hoverzoom'),
+	    theImageImg = $('.hoverzoom__img'),
+	    magnifier = $('.magnifier'),
+		zoomImage = $('.zoom__image'),
+		magnifierHeight = 200,
+		magnifierWidth = 200,
+		theImageWidth = parseInt(theImage.width()),
+		theImageHeight = parseInt(theImage.height()),
+		zoomImageWidth = parseInt(zoomImage.width()),
+		zoomImageHeight = parseInt(zoomImage.height()),
+		zoomW = theImageWidth / magnifierWidth * parseInt(zoomImage.width()),
+		zoomH = theImageHeight / magnifierHeight * parseInt(zoomImage.height());
+
+		// set magnifier width and height 
+		magnifier.height(magnifierHeight+"px"); 
+		magnifier.width(magnifierWidth+"px"); 
+
+		//add img clone to zoom image
+		var img = new Image(); 
+		img.src = theImageImg.attr('src'); 
+		zoomImage.html(img);
+		zoomImage.find('img').width(zoomW +'px');
+
+		theImage.on('mouseenter', generateZoom); 
+		theImage.on('mouseleave', function(e){
+			removeZoom(); 
+			$(this).off('mousemove', generateZoom)
+		})
+	}
+
+	function generateZoom(){
+	  theImage.on('mousemove', function(event){
+	    var imgPosX = theImage.offset().left,
+	        imgPosY = theImage.offset().top,
+	        Xstart = event.clientX - imgPosX,
+			Ystart = event.clientY -imgPosY,
+	        posX, 
+	        zoomX,
+			zoomY;
+
+	    if(Xstart<magnifierWidth/2){
+	      posX=0;
+	      zoomX=0;
+	    } else if(Xstart>(theImageWidth-magnifierWidth/2)){
+	        posX = 'unset';
+	        zoomX = magnifierWidth/2 - (zoomImageWidth / zoomW * 100);
+	    } else {
+	        var x = Xstart-magnifierWidth/2;
+	        posX = x +"px";
+	        zoomX = x/theImageWidth*100;
+	    };
+			var posY;
+	    if(Ystart<magnifierHeight/2){
+	      posY=0;
+	      zoomY=0;
+	    } else if(Ystart>(theImageHeight-magnifierHeight/2)){
+	        posY = 'unset';
+	        zoomY = magnifierHeight/2 - (zoomImageHeight / zoomH * 100);
+	    } else {
+	        var y = Ystart-magnifierHeight/2;
+	        posY = y+"px";
+	        zoomY = y/theImageHeight*100;
+	    };
+			
+		magnifier.css({opacity: 1}); 
+		magnifier.css({left: posX}); 
+		magnifier.css({top: posY});
+	    zoomImage.addClass('zoom__image-active').find('img').css({transform: "translateX("+-zoomX+"%) translateY("+-zoomY+"%)"}); 
+	  });
+	}
+
+	function removeZoom(){
+		magnifier.css({opacity: 0});
+		zoomImage.removeClass('zoom__image-active')
+	}
+
+	startZoom();
+	
+
+
+
+});

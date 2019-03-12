@@ -115,6 +115,46 @@ $(document).ready(function() {
 		});
     });
 
+    //====custom select
+    $(".select").each(function() {
+        var classes = $(this).attr("class"),
+            id      = $(this).attr("id"),
+            name    = $(this).attr("name");
+        var template =  '<div class="' + classes + '">';
+        var selectTriggerText = $(this).attr("placeholder")?$(this).attr("placeholder"):'';
+        selectTriggerText = $(this).find('option:selected').length>0?$(this).find('option:selected').text():selectTriggerText;
+        template += '<span class="select-trigger">' + selectTriggerText + '</span>';
+        template += '<div class="custom-options">';
+        $(this).find("option").each(function() {
+            template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+        });
+        template += '</div></div>';
+
+        $(this).wrap('<div class="select-wrapper"></div>');
+        $(this).hide();
+        $(this).after(template);
+    });
+    $(".custom-option:first-of-type").hover(function() {
+        $(this).parents(".custom-options").addClass("option-hover");
+    }, function() {
+        $(this).parents(".custom-options").removeClass("option-hover");
+    });
+    $(".select-trigger").on("click", function(event) {
+        $('html').one('click',function() {
+            $(".select").removeClass("opened");
+        });
+        $(this).parents(".select").toggleClass("opened");
+        event.stopPropagation();
+    });
+    $(".custom-option").on("click", function() {
+        $(this).parents(".select-wrapper").find("select").val($(this).data("value"));
+        $(this).parents(".select-wrapper").find("select").trigger('change');
+        $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+        $(this).addClass("selection");
+        $(this).parents(".select").removeClass("opened");
+        $(this).parents(".select").find(".select-trigger").text($(this).text());
+    });
+
 
     // zoom 
 	var theImage,

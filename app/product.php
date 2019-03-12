@@ -5,8 +5,6 @@
 <div class="content vertical">
 	<div class="vertical__bg-img ">
 		<div class="hoverzoom">
-<!-- 		<div id="productImage1" class="bg-img__item bg-img__item-active" data-large-img-url="img/product1.jpg" style="background-image: url(img/product1.jpg);"></div> -->
-	<!-- 	<img id="productImage1" class="bg-img__item bg-img__item-active" src="img/product1.jpg" alt="photo"  data-large-img-url="img/product1.jpg"> -->
 		<div class="magnifier"></div>
 		<img id="productImage1" class="bg-img__item bg-img__item-active hoverzoom__img" src="img/product1.jpg" alt="photo"  data-large-img-url="img/product1.jpg">
 		<img id="productImage2" class="bg-img__item" src="img/product-1.2.jpg" alt="Комплект постельного белья">

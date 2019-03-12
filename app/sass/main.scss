@@ -52,6 +52,10 @@ p{
 .overflow-hidden {
 	overflow: hidden;
 }
+.scroll{
+	overflow: auto;
+	height: 100%;
+}
 .img{
 	&__full{
 		object-fit: cover;
@@ -401,6 +405,19 @@ p{
 	top: 90px;
 	right: 20px;
 }
+.btnBasket__count{
+	background-color: #FF0000;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 11px;
+	text-align: center;
+	line-height: 16px;
+	bottom: 9px;
+    right: 9px;
+    position: absolute;
+}
 #btnCatalog{
 	position: fixed;
 	bottom: 20px;
@@ -676,6 +693,22 @@ p{
 	    	}
 	    }
 	}
+	&__delete{
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		width: 20px;
+		height: 20px;
+		background: #FFFFFF;
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
+		border-radius: 40px;
+		z-index: 2;
+		color: $main-color;
+		text-align: center;
+	    line-height: 22px;
+	    font-size: 9px;
+	    cursor: pointer;
+	}
 
 }
 .catalog{
@@ -888,4 +921,174 @@ input[type=number]{
   	z-index: 99;
   	opacity: 1;
   }
+}
+.basket{
+	height: 100vh;
+	display: flex;
+	&__left{
+		width: 25vw;
+		flex-shrink: 0;
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+    	flex-direction: column;
+	}
+	&__sidebar{
+		overflow: auto;
+		width: 100%;
+		height: 100%;
+		padding: 40px 20px 0;
+	}
+	&__card{
+		margin-bottom: 40px;
+		.card{
+			padding: 0;
+			height: calc(100vw / 4 * 0.745);
+		}
+	}
+	&__price{
+		font-size: 15px;
+		position: relative;
+		margin-top: 10px;
+		display: inline-block;
+    	line-height: 20px;
+	}
+	&__footer{
+		padding: 20px;
+	}
+	&__total{
+		font-weight: bold;
+		font-size: 18px;
+		margin-left: 20px;
+	}
+	&__content{
+		padding: 60px 40px 0;
+		width: 100%;
+	}
+}
+.hint{
+	width: 12px;
+	height: 12px;
+	background: #FFFFFF;
+	border: 1px solid $main-color;
+	border-radius: 40px;
+	color: $main-color;
+	text-align: center;
+	line-height: 12px;
+	position: absolute;
+	top: 0;
+	right: -15px;
+	font-size: 9px;
+}
+.form{
+	&__row{
+		margin-bottom: 20px;
+		display: flex;
+	}
+	&__desc {
+		font-size: 11px;
+		color: $secondary-text-color;
+	}
+}
+.input,
+.select{
+	width: 305px;
+	height: 32px;
+	border: 1px solid rgba(196, 196, 196, 0.5);
+	line-height: 32px;
+	margin-right: 20px;
+	padding: 0 20px;
+	position: relative;
+  	display: inline-block;
+}
+.select{
+	padding: 0;
+	&-wrapper {
+	  position: relative;
+	  display: inline-block;
+	  user-select: none;
+	}
+	&-wrapper select {
+	  display: none;
+	}
+	&-trigger {
+	  position: relative;
+	  display: block;
+	  background: #fff;
+	  padding: 0 20px;
+	  height: 100%;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  color: $secondary-text-color;
+		&:after {
+		  position: absolute;
+		  display: block;
+		  content: '';
+		  width: 12px;
+		  height: 5px;
+		  top: 45%;
+		  right: 15px;
+		  transform: rotate(180deg);
+	  	  background-image: url('../img/svg/arrow.svg');
+	  	  background-size: contain;
+	  	  transition: all 0.5s;
+		}
+	}
+	&.opened .select-trigger:after {
+	  transform: rotate(0deg);
+	}
+	&.opened .custom-options {
+	  opacity: 1;
+	  visibility: visible;
+	  pointer-events: all;
+	  transform: translateY(0);
+	}
+}
+.custom-options {
+  max-height: 300px;
+  overflow-y: auto;
+  position: absolute;
+  display: block;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-width: 100%;
+  margin: 0;
+  border: 1px solid rgba(196, 196, 196, 0.5);
+  box-sizing: border-box;
+  background: #fff;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-15px);
+  z-index: 9;
+  overflow: hidden;
+  padding: 15px 0 5px;
+}
+.option-hover:before {
+  background: #fff;
+}
+.custom-option {
+  position: relative;
+  display: block;
+  padding: 0 20px;
+  line-height: 20px;
+  min-height: 32px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.custom-option:last-of-type {
+  border-bottom: 0;
+}
+.custom-option:hover,
+.custom-option.selection {
+  color: $main-color;
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 0;
+  //transform: scale(1.05);
+}
+.custom-option.selection{
+	display: none;
 }

@@ -47,9 +47,10 @@
 		</button>
 	</form>
 
-	<button id="btnBasket" class="btn__icon btn__icon-full">
+	<a href="basket.php" id="btnBasket" class="btn__icon btn__icon-full">
 		<img src="img/basket-icon.svg" alt="basket">
-	</button>
+		<div class="btnBasket__count">15</div>
+	</a>
 </header>
 <div id="menu" class="menu">
 	<div class="menu__wrap">

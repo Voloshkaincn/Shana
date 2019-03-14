@@ -1,7 +1,7 @@
 <?php
 	include 'header.php';
 ?>
-	<a href="/catalog.php" id="btnCatalog" class="btn__icon btn__icon-empty">
+	<a href="catalog.php" id="btnCatalog" class="btn__icon btn__icon-empty">
 		<img src="img/catalog-icon.svg" alt="catalog">
 	</a>
 	<div class="main">

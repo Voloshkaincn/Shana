@@ -122,7 +122,7 @@ $(document).ready(function() {
             name    = $(this).attr("name");
         var template =  '<div class="' + classes + '">';
         var selectTriggerText = $(this).attr("placeholder")?$(this).attr("placeholder"):'';
-        selectTriggerText = $(this).find('option:selected').length>0?$(this).find('option:selected').text():selectTriggerText;
+        //selectTriggerText = $(this).find('option:selected').length>0?$(this).find('option:selected').text():selectTriggerText;
         template += '<span class="select-trigger">' + selectTriggerText + '</span>';
         template += '<div class="custom-options">';
         $(this).find("option").each(function() {
@@ -143,6 +143,7 @@ $(document).ready(function() {
         $('html').one('click',function() {
             $(".select").removeClass("opened");
         });
+        $(".select-trigger").not($(this)).parents(".select").removeClass("opened");
         $(this).parents(".select").toggleClass("opened");
         event.stopPropagation();
     });
@@ -154,6 +155,15 @@ $(document).ready(function() {
         $(this).parents(".select").removeClass("opened");
         $(this).parents(".select").find(".select-trigger").text($(this).text());
     });
+
+    //====input===
+    $('.input').on('focusout', function(){
+		if($(this).val().trim() != ''){
+			$(this).addClass('input-focus');
+		} else{
+			$(this).removeClass('input-focus');
+		}
+	});
 
 
     // zoom 

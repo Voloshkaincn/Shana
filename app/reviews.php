@@ -3,8 +3,8 @@
 ?>
 
 <div class="content vertical">
-	<div class="vertical__bg-img">
-		<img class="img__full img__center" src="img/reviews.jpg" alt="photo">
+	<div class="vertical__bg-img d-flex">
+		<img class="m-auto" src="img/svg/cat-for-reviews.svg" alt="photo">
 	</div>
 	<div class="vertical__wrap">
 		<div class="vertical__content">
@@ -48,6 +48,11 @@
 						<span class="rating__star"></span>
 					</div>
 					<button class="btn btn__full ml-auto">Отправить</button>
+				</div>
+				<div class="review__answer" style="display: none">
+					<div class="answer__wrap success">
+						<p class="">Спасибо, что поделился опытом с другими и помог нам стать лучше.</p>
+					</div>
 				</div>
 			</form>
 			<div class="review__block">

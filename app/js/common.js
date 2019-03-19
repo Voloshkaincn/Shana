@@ -165,6 +165,11 @@ $(document).ready(function() {
 		}
 	});
 
+	//=====hint=====
+	$('.hint').on('click', function(){
+		$(this).toggleClass('hint-active');
+	});
+
 
     // zoom 
 	var theImage,

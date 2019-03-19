@@ -15,8 +15,19 @@
 					<img src="img/img2.jpg" alt="product" class="card__img">
 					<div class="card__name">Ваниль</div>
 				</div>
-				<div class="basket__price">2990 грн.</div>
-				<div class="hint">?</div>
+				<div class="hint__wrap">
+					<div class="basket__price">2 950 грн.</div>
+					<div class="hint">?</div>
+					<div class="hint__content">
+						<div class="hint__title">Комплект постельного белья: Ваниль</div>
+						<div class="count__item"><span class="count-decor">2</span>Наволочка (50х70 или 50х70 см)</div>
+						<div class="count__item"><span class="count-decor">1</span>Пододеяльник (150х220 см)</div>
+						<div class="count__item"><span class="count-decor">2</span>Простынь (220х240 см)</div>
+						<div class="count__item"><span class="count-decor">1</span>Простынь на резинке (160х200х20 см)</div>
+						<div class="count__item"><span class="count-decor">4</span>Наволочка с ушками ( 50х70 или 50х70 см)</div>
+						<a class="link mx-auto" href="product.php">Изменить</a>
+					</div>
+				</div>		
 			</div>
 			<div class="basket__card">
 				<div class="card__delete"><span class="icon-del"></span></div>
@@ -25,18 +36,19 @@
 					<div class="card__name">Ваниль</div>
 					<span class="card__price"><span class="card__price-old">110 грн.</span><span class="card__price-new">50 грн. </span></span>
 				</div>
-				<div class="basket__price">50 грн.</div>
-				<div class="hint">?
+				<div class="hint__wrap">
+					<div class="basket__price">50 грн.</div>
+					<div class="hint">?</div>
 					<div class="hint__content">
 						<div class="hint__title">Комплект постельного белья: Ваниль</div>
-						<div class="text-light"><span class="count-decor">2</span>Наволочка (50х70 или 50х70 см)</div>
-						<div class="text-light"><span class="count-decor">1</span>Пододеяльник (150х220 см)</div>
-						<div class="text-light"><span class="count-decor">2</span>Простынь (220х240 см)</div>
-						<div class="text-light"><span class="count-decor">1</span>Простынь на резинке (160х200х20 см)</div>
-						<div class="text-light"><span class="count-decor">4</span>Наволочка с ушками ( 50х70 или 50х70 см)</div>
-						<a href="link">Изменить</a>
+						<div class="count__item"><span class="count-decor">2</span>Наволочка (50х70 или 50х70 см)</div>
+						<div class="count__item"><span class="count-decor">1</span>Пододеяльник (150х220 см)</div>
+						<div class="count__item"><span class="count-decor">2</span>Простынь (220х240 см)</div>
+						<div class="count__item"><span class="count-decor">1</span>Простынь на резинке (160х200х20 см)</div>
+						<div class="count__item"><span class="count-decor">4</span>Наволочка с ушками ( 50х70 или 50х70 см)</div>
+						<a class="link mx-auto" href="product.php">Изменить</a>
 					</div>
-				</div>
+				</div>				
 			</div>
 			
 		</div>
@@ -101,8 +113,14 @@
 			<button class="btn btn__full mt-1">Заказать</button>
 		</form>
 	</div>
-
-</div>	
+</div>
+<div class="content basket__answer" style="display: none">
+	<div class="answer__wrap success">
+		<p class="mb-0">Здорово! Теперь дело за нами. </p>
+		<p class="my-0">Мы перезвоним в ближайшее время и уточним все детали.  </p>
+		<p>Спасибо тебе за заказ.</p>
+	</div>
+</div>
 
 <?php
 	include 'footer.php';

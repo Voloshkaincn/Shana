@@ -77,7 +77,7 @@
 				
 			</li>
 			<li class="">
-				<a class="menu__item menu__item-lg" href="#">Sale</a>
+				<a class="menu__item menu__item-lg" href="products.php">Sale</a>
 			</li>
 		</ul>
 		<ul class="menu__list">

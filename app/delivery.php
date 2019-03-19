@@ -3,8 +3,8 @@
 ?>
 
 <div class="content vertical">
-	<div class="vertical__bg-img">
-		<img class="img__full img__center" src="img/delivery.jpg" alt="photo">
+	<div class="vertical__bg-img d-flex">
+		<img class="m-auto" src="img/svg/cat-for-delivery.svg" alt="photo">
 	</div>
 	<div class="vertical__wrap">
 		<div class="vertical__content">

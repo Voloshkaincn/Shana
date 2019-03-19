@@ -1018,7 +1018,7 @@ input[type=number]{
 	    left: 0;
 	    height: 100%;
 	    background: #fff;
-	    z-index: 2;
+	    z-index: 5;
 	}
 }
 .answer{
@@ -1039,6 +1039,7 @@ input[type=number]{
 .success{
 	p{
 		color: $main-color;
+		width: 100%;
 	}
 }
 .hint{
@@ -1086,7 +1087,7 @@ input[type=number]{
 	    //box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
 	    //width: 350px;
 	    text-align: center;
-	    z-index: 99;
+	    z-index: 4;
 	 //    &:hover{
 		// 	padding: 20px 0;
 		// 	max-height: 50vh;

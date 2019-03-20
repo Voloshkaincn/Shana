@@ -2,6 +2,10 @@
 	include 'header.php';
 ?>
 
+<!--времення кнопка для проверки верстки ответа формы.-->
+<button class="btn btn__full" onclick="$('.review__answer').toggle();" style="position: fixed; bottom: 20px; right: 20px; z-index: 8;">Покажи ответ формы</button>
+<!--надо удалить-->
+
 <div class="content vertical">
 	<div class="vertical__bg-img d-flex">
 		<img class="m-auto" src="img/svg/cat-for-reviews.svg" alt="photo">

@@ -84,8 +84,8 @@ $(document).ready(function() {
 		startZoom();
 	})
 //=========quantity====== 
-	$('<div class="quantity-button quantity-up">+</div>').insertAfter('.quantity-input');
-	$('<div class="quantity-button quantity-down">&ndash;</div>').insertBefore('.quantity-input');
+	$('<button class="quantity-button quantity-up">+</button>').insertAfter('.quantity-input');
+	$('<button class="quantity-button quantity-down">&ndash;</button>').insertBefore('.quantity-input');
     $('.quantity').each(function() {
 	var spinner = $(this), 
 		input = spinner.find('input[type="number"]'),
@@ -102,6 +102,7 @@ $(document).ready(function() {
 			}
 			spinner.find("input").val(newVal);
 			spinner.find("input").trigger("change");
+			return false;
 		});
 		btnDown.click(function() {
 			var oldValue = parseFloat(input.val());
@@ -111,7 +112,8 @@ $(document).ready(function() {
 			  var newVal = oldValue - 1;
 			}
 			spinner.find("input").val(newVal);
-			spinner.find("input").trigger("change"); 
+			spinner.find("input").trigger("change");
+			return false;
 		});
     });
 

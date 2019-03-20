@@ -1,5 +1,5 @@
 @import "common-components/normalize";
-@import "common-components/fonts";
+//@import "common-components/fonts";
 @import "common-components/animations";
 @import "lib-components/css-hacks";
 @import "../fonts/iconmoon/style.css";
@@ -11,31 +11,36 @@ $secondary-text-color: #656565;
 $sidebar-width: 140px;
 
 body {
-	font-family: 'montserrat', sans-serif;
+	//font-family: 'montserrat', sans-serif;
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-size: 14px;
 	line-height: 1.3;
 	color: $text-color;
 }
 h1, .h1{
-	font-family: 'montserrat', sans-serif;
+	//font-family: 'montserrat', sans-serif;
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-weight: bold;
 	font-size: 36px;
 	line-height: 1.25;
 	margin: 15px 0 20px;
 }
 h2, .h2{
-	font-family: 'montserrat', sans-serif;
+	//font-family: 'montserrat', sans-serif;
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-weight: bold;
 	font-size: 24px;
 	line-height: 1.4;
 }
 h3, .h3{
-	font-family: 'montserrat', sans-serif;
+	//font-family: 'montserrat', sans-serif;
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 1.4;
 }
 p{
+	font-family: 'Montserrat Alternates', sans-serif;
 	line-height: 1.4;
 }
 label{
@@ -79,22 +84,45 @@ label{
 	text-align: center;
 	cursor: pointer;
 	&__full{
-		background: linear-gradient(180deg, #FF6D04 100%, #fff 166.34%);
-		box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.07);
+		background: $main-color;
+		position: relative;
+		box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.07);
 		color: #fff;
 		transition: all 0.3s;
-		&:hover{
+		z-index: 1;
+		&:before{
+			content: '';
+			width: 100%;
+			height: 100%;
+			border-radius: inherit;
+			z-index: -1;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
 			background: linear-gradient(180deg, #FF6D04 50%, #fff 166.34%);
+			transition: all 0.3s;
+		}
+		&:hover{
 			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
+			&:before{
+				opacity: 1;
+			}
 		}
 		&:active{
-			background: linear-gradient(180deg, #FF7A1B, #FF7A1B);
+			background: $main-color;
 			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
+			&:before{
+				opacity: 0;
+			}
 		}
 		
 		&:focus{
-			background: linear-gradient(180deg, #FF6D04 100%, #fff 166.34%);
+			background: #FF6D04;
 			box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.07);
+			&:before{
+				opacity: 0;
+			}
 		}
 	}
 	&__icon{
@@ -237,6 +265,9 @@ label{
 .tabs{
 	margin: 0 -10px;
     display: flex;
+    &__content{
+    	margin: 0 -10px;
+    }
 }
 .tab{
 	width: 100%;
@@ -252,7 +283,7 @@ label{
 	}
 	&__content{
 		display: none;
-		padding: 40px 0;
+		padding: 40px 10px;
 		overflow: hidden;
 		transition: opacity 0.5s, width 0 0.5s ;
 	}
@@ -895,6 +926,7 @@ input[type=number]{
 	    }
 	  }
   	&-button {
+  		font-family: Montserrat Alternates,sans-serif;
 	    cursor: pointer;
 	    padding: 0 10px;
 	    text-align: center;
@@ -906,7 +938,33 @@ input[type=number]{
 	    -ms-user-select: none;
 	    -o-user-select: none;
 	    user-select: none;
-	  }
+	    &:before{
+	    	content: '';
+	    	height: 21px;
+			width: 70px;
+			border-radius: 40px;
+			position: absolute;
+			top: 0;
+			z-index: -1;
+			transition: all 0.3s;
+	    }
+	}
+	&-down{
+		&:before{
+			left: 0;
+		}
+		&:focus:before{
+			box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.07); 
+		}
+	}
+	&-up{
+		&:before{
+			right: 0;
+		}
+		&:focus:before{
+			box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.07);
+		}
+	}
 }
 .product__price{
 	font-size: 36px;

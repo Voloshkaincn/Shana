@@ -17,6 +17,7 @@
 			<link rel="stylesheet" type="text/css" href="css/libs.min.css">
 		<!-- Common -->
 			<link rel="stylesheet" type="text/css" href="css/main.min.css">
+			<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500,700" rel="stylesheet">
 
 
 	<!--[if lt IE 9]>v
@@ -47,9 +48,11 @@
 		</button>
 	</form>
 
-	<a href="basket.php" id="btnBasket" class="btn__icon btn__icon-full">
-		<img src="img/basket-icon.svg" alt="basket">
-		<div class="btnBasket__count">15</div>
+	<a href="basket.php" id="btnBasket">
+		<div class="btn__icon btn__full">
+			<img src="img/basket-icon.svg" alt="basket">
+			<div class="btnBasket__count">15</div>
+		</div>
 	</a>
 </header>
 <div id="menu" class="menu">

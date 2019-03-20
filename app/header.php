@@ -87,7 +87,7 @@
 			<li><a class="menu__item menu__item-md" href="about-us.php">Про Shana Textile</a></li>
 			<li><a class="menu__item menu__item-md" href="delivery.php">Доставка и оплата</a></li>
 			<li><a class="menu__item menu__item-md" href="reviews.php">Отзывы</a></li>
-			<li><a class="menu__item menu__item-md" href="about-us.php">Блог</a></li>
+			<li><a class="menu__item menu__item-md" href="blog.php">Блог</a></li>
 			<li><a class="menu__item menu__item-md" href="contacts.php">Контакты</a></li>
 		</ul>
 		<ul class="lang">

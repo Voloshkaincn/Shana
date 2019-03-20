@@ -1465,14 +1465,17 @@ $star_size: 24px;
 		display: block;
 		width: 33.33%;
 		padding: 0 10px;
+		max-height: calc(100vh - 135px);
 		&:hover{
 			.blog__img{
-				transform: scale(1.05);    			
+				transform: scale(1.05);		
 			}
 		}
 	}
 	&__img{
 		transition: all 0.3s;
+		max-height: 80%; 
+		display: block;
 	}
 }
 .post{

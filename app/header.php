@@ -56,6 +56,7 @@
 	</a>
 </header>
 <div id="menu" class="menu">
+	<div class="menu__overlay"></div>
 	<div class="menu__wrap">
 		<ul class="menu__list">
 			<li class="menu__parent">

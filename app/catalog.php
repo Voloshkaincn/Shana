@@ -44,7 +44,7 @@
 
 		<div class="catalog__row catalog__row-md">
 			<div class="catalog__item  catalog__item-xl">
-				<a href="category.php" class="card__link">
+				<a href="products.php" class="card__link">
 					<img class="card__img" src="img/sale.jpg" alt="Sale">
 					<span class="card__name">Sale</span>
 				</a>

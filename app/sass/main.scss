@@ -174,8 +174,7 @@ label{
 		cursor: pointer;
 		z-index: 9;
 		margin-left: 10px;
-		// &:hover,
-		// &:focus, 
+		&:hover,
 		&.btn__menu-open{
 			.line {
 				&:after{
@@ -334,10 +333,25 @@ label{
 	&.menu__open{
 		width: 50%;
 		min-width: 450px;
+		transition: all 0.8s;
 		.menu__list{
 			opacity: 1;
 			transition: opacity 0.5s;
 		}
+		.menu__overlay{
+			width: 100%;
+			opacity: 1;
+			transition: opacity 0.5s 0.3s;
+		}
+	}
+	&__overlay{
+		width: 0; 
+		opacity: 0;
+		height: 100%;
+		position: fixed;
+		z-index: 0;
+		background-color: rgba(116, 88, 68, 0.61);
+		transition: opacity 0.5s, width 0s 0.5s;
 	}
 	&__wrap{
 		width: 100%; 
@@ -403,7 +417,7 @@ label{
 				transition: color 0.1s, opacity 0.5s, top 0s 0s;
 				&:before{
 					top: 0;
-					opacity: 0.65;
+					opacity: 0.85;
 					transition: color 0.1s, opacity 0.5s, top 0s 0s;
 				}
 			}
@@ -1111,17 +1125,17 @@ input[type=number]{
 	}
 }
 .hint{
-	width: 12px;
-	height: 12px;
+	width: 17px;
+	height: 17px;
 	background: #FFFFFF;
 	border: 1px solid $main-color;
 	border-radius: 40px;
 	color: $main-color;
 	text-align: center;
-	line-height: 12px;
+	line-height: 15px;
 	display: inline-block;
-    bottom: 7px;
-	font-size: 9px;
+    bottom: 3px;
+	font-size: 13px;
 	cursor: pointer;
 	position: relative;
 	order: 2;
@@ -1165,6 +1179,7 @@ input[type=number]{
 		color: $text-color;
 		margin-bottom: 20px;
 		text-align: left;
+		line-height: 1.3;
 	}
 	&__wrap{
 		display: flex;

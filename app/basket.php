@@ -109,7 +109,7 @@
 			<div class="form__row">
 				<select name="buy" id="" class="select"  placeholder="Способ оплаты">
 					<option value="Наличными, при встрече">Наличными, при встрече</option>
-					<option value="Денежным переводом на карту Приват Банка или Monobank">Денежным переводом на карту Приват Банка или Monobank</option>
+					<option value="Денежным переводом на карту Приват Банка или Monobank">Денежным переводом на карту Приват Банка или Monobank</option>
 					<option value="Наложенным платежом">Наложенным платежом</option>
 				</select>
 				<span class="form__desc">И укажи, как хочешь оплатить.</span>

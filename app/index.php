@@ -10,7 +10,7 @@
 				<div class="main__item">
 					<div class="main__content">
 						<div class="h1 main__title">Комплекты постельного белья со скидкой 20%</div>
-						<p class="main__text">У нас есть 5 расцветок постельного, на которые  будет действовать скидка 20% весь Август!</p>
+						<p class="main__text">У нас есть 5 расцветок постельного, на которые будет действовать скидка 20% весь Август!</p>
 						<a href="#" class=""><div class="btn btn__full">Хочу!</div></a>
 					</div>       
 				</div>
@@ -19,7 +19,7 @@
 				<div class="main__item">
 					<div class="main__content">
 						<div class="h1 main__title">Слайд номер 2 со скидкой в 15%</div>
-						<p class="main__text">У нас есть 5 расцветок постельного, на которые будет действовать скидка 20% весь Август!</p>
+						<p class="main__text">У нас есть 5 расцветок постельного, на которые будет действовать скидка 20% весь Август!</p>
 						<a href="#" class=""><div class="btn btn__full">Хочу!</div></a>
 					</div>
 				</div>
@@ -28,7 +28,7 @@
 				<div class="main__item">
 					<div class="main__content">
 						<div class="h1 main__title">Слайд номер 3 со скидкой в 15%</div>
-						<p class="main__text">У нас есть 5 расцветок постельного, на которые будет действовать скидка 20% весь Август!</p>
+						<p class="main__text">У нас есть 5 расцветок постельного, на которые будет действовать скидка 20% весь Август!</p>
 						<a href="#" class=""><div class="btn btn__full">Хочу!</div></a>
 					</div>
 				</div>

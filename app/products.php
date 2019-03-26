@@ -18,7 +18,7 @@
 			</a>
 		</div>
 		<div class="products__item card">
-			<a href="product.php" class="card__link">
+			<a href="single-product.php" class="card__link">
 				<img class="card__img" src="img/jacard.jpg" alt="Сатин-жаккард">
 				<span class="card__name">Антрацит</span>
 				<span class="card__price"><span class="card__price-old">110 грн.</span><span class="card__price-new">50 грн. </span></span>

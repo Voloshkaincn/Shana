@@ -4,7 +4,7 @@
 
 <div class="content vertical">
 	<div class="vertical__bg-img">
-		<img src="img/about-us.jpg" alt="photo">
+		<img class="img__full" src="img/about-us.jpg" alt="photo">
 	</div>
 	<div class="vertical__wrap">
 		<div class="vertical__content">

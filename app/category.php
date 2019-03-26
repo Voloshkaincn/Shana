@@ -5,11 +5,11 @@
 <div class="content  overflow-hidden">
 	<div class="content__header">
 		<div class="breadcrumb">
-			<a href="catalpg.php">Каталог</a><span> / </span>
+			<a href="catalog.php">Каталог</a><span> / </span>
 		</div>
 		<h1 class="h1">Постельное белье</h1>
 	</div>
-	<div class="row mb-1">
+	<div class="card__row mb-sm-1 mb-0">
 		<div class="category__item card">
 			<a href="sub-category.php" class="card__link">
 				<img class="card__img" src="img/stripe-satin.jpg" alt="Страйп-сатине">

@@ -71,21 +71,21 @@
 				<div class="menu__back"><span class="icon-arrow"></span></div>
 				<div class="menu__item menu__item-lg">Постельное бельё<div>
 				<ul class="menu__sublist">
-					<li><a href="#" class="menu__item menu__item-lg">Страйп-сатин</a></li>
-					<li><a href="#" class="menu__item menu__item-lg">Сатин-жаккард</a></li>
-					<li><a href="#" class="menu__item menu__item-lg">Ранфорс</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Страйп-сатин</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Сатин-жаккард</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Ранфорс</a></li>
 				</ul>
 			</li>
 			<li class="menu__parent">
 				<div class="menu__back"><span class="icon-arrow"></span></div>
 				<div  class="menu__item menu__item-lg">Домашний текстиль</div>
 				<ul class="menu__sublist">
-					<li><a href="#"" class="menu__item menu__item-lg">Подушки</a></li>
-					<li><a href="#" class="menu__item menu__item-lg">Одеяла</a></li>
-					<li><a href="#" class="menu__item menu__item-lg">Наматрасники</a></li>
-					<li><a href="#" class="menu__item menu__item-lg">Махровые простыни</a></li>
-					<li><a href="#" class="menu__item menu__item-lg">Покрывала и пледы</a></li>
-					<li><a href="#" class="menu__item menu__item-lg">Полотенца</a></li>
+					<li><a href="sub-category.php"" class="menu__item menu__item-lg">Подушки</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Одеяла</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Наматрасники</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Махровые простыни</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Покрывала и пледы</a></li>
+					<li><a href="sub-category.php" class="menu__item menu__item-lg">Полотенца</a></li>
 				</ul>
 			</li>
 			<li class="">

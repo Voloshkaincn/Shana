@@ -20,15 +20,11 @@ gulp.task('compileSass', function(){
 	.pipe(sassToCss({outputStyle: 'expanded'}).on('error', sassToCss.logError))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
 	.pipe(cleanCSS())
-	// .pipe(uglifycss({
- //      "maxLineLen": 80,
- //      "uglyComments": true
- //    }))
     .pipe(cssnano())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.reload({stream: true}));
+	.pipe(browserSync.stream({ match: '**/*.css' }));
 });
 
 //Concat all library js files into libs.min.js
@@ -76,6 +72,7 @@ gulp.task('browserSync', function serverStart(){
 
 // Watch
 gulp.task('watch', gulp.parallel('code', 'compileSass', 'createJsLibs', 'compressJs', 'browserSync', function startWatching(){
+	
 	gulp.watch('app/sass/**/*.{css,sass,scss}', gulp.parallel('compileSass'));
 	gulp.watch('app/js/common.js', gulp.parallel('compressJs'));
 	gulp.watch('app/**/*.{php,html}', gulp.parallel('code'));

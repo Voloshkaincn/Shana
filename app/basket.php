@@ -120,7 +120,7 @@
 </div>
 <div class="content basket__answer" style="display: none">
 	<div class="answer__wrap success">
-		<p class="mb-0">Здорово! Теперь дело за нами.</p><p class="my-0">Мы перезвоним в ближайшее время и уточним все детали.</p><p>Спасибо тебе за заказ.</p>
+		<p class="mb-0">Здорово! <span class="nowrap">Теперь дело за нами.</span></p><p class="my-0">Мы перезвоним в ближайшее время и уточним все детали.</p><p>Спасибо тебе за заказ.</p>
 	</div>
 </div>
 

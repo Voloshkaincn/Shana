@@ -29,7 +29,7 @@
 
 <script>
                 var map,
-            		        coordinates  = {lat: 51.4940441, lng: 31.2862197};
+            		        coordinates  = {lat: 51.493863, lng: 31.288390}; 
             		    function initMap() {
             		        map = new google.maps.Map(document.getElementById('map'), {
             		        center: coordinates,

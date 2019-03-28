@@ -2,7 +2,8 @@ var gulp 	 	     = require('gulp'),
 		sassToCss 	 = require('gulp-sass'),
 		concat       = require("gulp-concat"),
 		uglifyjs     = require("gulp-uglify"),
-		uglifycss    = require("gulp-uglifycss"),
+		//uglifycss    = require("gulp-uglifycss"),
+		cleanCSS = require('gulp-clean-css');
 		autoprefixer = require("gulp-autoprefixer"),
 		rename       = require("gulp-rename"),
 		browserSync  = require('browser-sync'),
@@ -18,10 +19,11 @@ gulp.task('compileSass', function(){
 	.pipe(sourcemaps.init())
 	.pipe(sassToCss({outputStyle: 'expanded'}).on('error', sassToCss.logError))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
-	.pipe(uglifycss({
-      "maxLineLen": 80,
-      "uglyComments": true
-    }))
+	.pipe(cleanCSS())
+	// .pipe(uglifycss({
+ //      "maxLineLen": 80,
+ //      "uglyComments": true
+ //    }))
     .pipe(cssnano())
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write())

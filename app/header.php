@@ -30,9 +30,11 @@
 	<!-- START Preloader -->
 		<div id="page-preloader"><span class="spinner preloader-anim"></span></div>
 	<!-- Finish Preloader -->
+
+	<div class="max-767"></div>
 <header class="header">
 	<a href="/" class="header__logo">
-		<img src="img/logo.svg" alt="shana текстиль">
+		<img class="logo__img" src="img/logo.svg" alt="shana текстиль">
 	</a>
 	<button class="btn__menu" id="menuButton">
 		<div class="line"></div>
@@ -58,17 +60,25 @@
 <div id="menu" class="menu">
 	<div class="menu__overlay"></div>
 	<div class="menu__wrap">
+		<form class="menu__search" action="#" method="post">
+			<button class="menu__seraching">
+				<img src="img/menu-search-icon.svg" alt="search">
+			</button>
+			<input class="menu__input" type="text" placeholder="Поиск">			
+		</form>
 		<ul class="menu__list">
 			<li class="menu__parent">
+				<div class="menu__back"><span class="icon-arrow"></span></div>
+				<div class="menu__item menu__item-lg">Постельное бельё<div>
 				<ul class="menu__sublist">
 					<li><a href="#" class="menu__item menu__item-lg">Страйп-сатин</a></li>
 					<li><a href="#" class="menu__item menu__item-lg">Сатин-жаккард</a></li>
 					<li><a href="#" class="menu__item menu__item-lg">Ранфорс</a></li>
 				</ul>
-				<div class="menu__item menu__item-lg">Постельное булье</div>
-				
 			</li>
 			<li class="menu__parent">
+				<div class="menu__back"><span class="icon-arrow"></span></div>
+				<div  class="menu__item menu__item-lg">Домашний текстиль</div>
 				<ul class="menu__sublist">
 					<li><a href="#"" class="menu__item menu__item-lg">Подушки</a></li>
 					<li><a href="#" class="menu__item menu__item-lg">Одеяла</a></li>
@@ -77,8 +87,6 @@
 					<li><a href="#" class="menu__item menu__item-lg">Покрывала и пледы</a></li>
 					<li><a href="#" class="menu__item menu__item-lg">Полотенца</a></li>
 				</ul>
-				<div  class="menu__item menu__item-lg">Домашний текстиль</div>
-				
 			</li>
 			<li class="">
 				<a class="menu__item menu__item-lg" href="products.php">Sale</a>

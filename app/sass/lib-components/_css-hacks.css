@@ -20,7 +20,7 @@
   background: rgba(163, 163, 163, 1);
 }
 
-::-webkit-input-placeholder {color: #C4C4C4; font-family: montserrat,sans-serif;}
-::-moz-placeholder          {color: #C4C4C4; font-family: montserrat,sans-serif;}
-:-moz-placeholder           {color: #C4C4C4; font-family: montserrat,sans-serif;}
-:-ms-input-placeholder      {color: #C4C4C4; font-family: montserrat,sans-serif;}
+::-webkit-input-placeholder {color: #C4C4C4; font-family: 'Montserrat Alternates',sans-serif;}
+::-moz-placeholder          {color: #C4C4C4; font-family: 'Montserrat Alternates',sans-serif;}
+:-moz-placeholder           {color: #C4C4C4; font-family: 'Montserrat Alternates',sans-serif;}
+:-ms-input-placeholder      {color: #C4C4C4; font-family: 'Montserrat Alternates',sans-serif;}

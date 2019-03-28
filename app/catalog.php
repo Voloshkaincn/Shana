@@ -3,7 +3,7 @@
 ?>
 
 <a href="/" id="btnCatalog" class="btn__icon btn__icon-empty">
-	<img src="img/catalog-icon.svg" alt="catalog">
+	<img class="btn-ctalog__img" src="img/svg/del.svg" alt="catalog">
 </a>
 <div class="content overflow-hidden pr-0">
 	<div class="catalog">

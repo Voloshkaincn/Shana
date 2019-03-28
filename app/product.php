@@ -5,12 +5,13 @@
 <div class="content vertical">
 	<div class="vertical__bg-img ">
 		<div class="hoverzoom">
-		<div class="magnifier"></div>
-		<img id="productImage1" class="bg-img__item bg-img__item-active hoverzoom__img" src="img/product1.jpg" alt="photo"  data-large-img-url="img/product1.jpg">
-		<img id="productImage2" class="bg-img__item" src="img/product-1.2.jpg" alt="Комплект постельного белья">
-		<img id="productImage3" class="bg-img__item" src="img/product-1.3.jpg" alt="Комплект постельного белья">
-		<img id="productImage4" class="bg-img__item" src="img/product-1.4.jpg" alt="Комплект постельного белья">
+			<div class="magnifier"></div>
+			<img id="productImage1" class="bg-img__item bg-img__item-active hoverzoom__img" src="img/product1.jpg" alt="photo"  data-large-img-url="img/product1.jpg">
+			<img id="productImage2" class="bg-img__item" src="img/product-1.2.jpg" alt="Комплект постельного белья">
+			<img id="productImage3" class="bg-img__item" src="img/product-1.3.jpg" alt="Комплект постельного белья">
+			<img id="productImage4" class="bg-img__item" src="img/product-1.4.jpg" alt="Комплект постельного белья">
 		</div>
+
 	</div>
 	<div class="zoom__image"></div>
 	<div class="vertical__gallery">
@@ -36,7 +37,7 @@
 			<p class="mt-0">Ммм, кажется, это что-то среднее между фиолетовым и серым.</p>
 			<p class="text-notify">Скоро приедет</p>
 			<form action="#">
-				<div class="variation my-2">
+				<div class="variation mt-2 mb-1">
 					<div class="variation__item">
 						<input class="variation__input" id="size-1.5" type="radio" name="size">
 						<label for="size-1.5" class="variation__label">1,5-спальный</label>						
@@ -141,6 +142,9 @@
 			</form>			
 		</div>
 	</div>
+	<?php
+		include 'sidebar.php';
+	?>
 
 </div>	
 

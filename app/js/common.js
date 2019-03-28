@@ -318,7 +318,11 @@ $(document).ready(function() {
 		$( window ).resize(startZoom);
 	}
 
-	
+	//===== product slider =====
+	// $('.slider').slick({
+	// 	arrows: false
+
+	// });
 	
 
 

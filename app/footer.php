@@ -1,9 +1,4 @@
-<footer class="footer">
-	<div class="container">
-	</div>
-</footer>
 
-	
 	<!-- Scripts -->
 		<!-- Libs -->
 			<script defer src="js/libs.min.js"></script>

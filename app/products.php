@@ -5,11 +5,11 @@
 <div class="content ">
 	<div class="content__header">
 		<div class="breadcrumb">
-			<a href="catalpg.php">Каталог</a><span> / </span><a href="category.php">Постельное белье</a>
+			<a href="catalog.php">Каталог</a><span> / </span><a href="category.php">Постельное белье</a>
 		</div>
 		<h1 class="h1">Страйп-сатин</h1>
 	</div>
-	<div class="row mb-1">
+	<div class="card__row">
 		<div class="products__item card">
 			<a href="product.php" class="card__link">
 				<img class="card__img" src="img/stripe-satin.jpg" alt="Страйп-сатине">
@@ -89,6 +89,9 @@
 		</div>
 
 	</div>
+	<?php
+		include 'sidebar.php';
+	?>	
 </div>	
 
 <?php

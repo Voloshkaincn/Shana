@@ -34,7 +34,7 @@ gulp.task('createJsLibs', function(){
 			'app/libs/slick-carousel/slick.js',
 			// 'app/libs/Event/Event.js',
 			// 'app/libs/Magnifier/Magnifier.js',
-			'app/libs/Sprite-Zoom/src/jquery.spritezoom.js'
+			// 'app/libs/Product-Carousel/src/jquery.exzoom.js'
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglifyjs())

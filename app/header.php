@@ -51,7 +51,7 @@
 	</form>
 
 	<a href="basket.php" id="btnBasket">
-		<div class="btn__icon btn__full">
+		<div class="btn__icon btn__icon-full">
 			<img src="img/basket-icon.svg" alt="basket">
 			<div class="btnBasket__count">15</div>
 		</div>

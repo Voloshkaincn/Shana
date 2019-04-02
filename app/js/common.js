@@ -59,8 +59,6 @@ $(document).ready(function() {
 		}
 	});
 	
-	
-
 //==========search btn ===========
 	$('#formSearch').on('click', function(event){
 		event.stopPropagation();
@@ -96,7 +94,7 @@ $(document).ready(function() {
 	  	} else {
 	    	$(this).slick('slickPrev');
 	  	}
-	  }));
+	}));
 	$('#mainImgSlider').slick({
 		infinite: true,
 		slidesToShow: 1,
@@ -109,7 +107,7 @@ $(document).ready(function() {
 	});
 	$('#mainSlider').on('VoloChange', function(event, slick, currentSlide, nextSlide){
 		if(currentSlide != $('#mainImgSlider').slick('slickCurrentSlide')){
-			 $('#mainImgSlider').slick('slickGoTo', currentSlide, false);
+			$('#mainImgSlider').slick('slickGoTo', currentSlide, false);
 		}
 
 	});
@@ -125,13 +123,6 @@ $(document).ready(function() {
 		}
 	});
 
-//======product gallery slidery=========
-	$('.vertical__item').on('click', function(){
-		var imgId = $(this).data('id');
-		$('.bg-img__item-active').removeClass('bg-img__item-active hoverzoom__img');
-		$('#' + imgId).addClass('bg-img__item-active hoverzoom__img');
-		startZoom();
-	})
 //=========quantity====== 
 	$('<button class="quantity-button quantity-up">+</button>').insertAfter('.quantity-input');
 	$('<button class="quantity-button quantity-down">&ndash;</button>').insertBefore('.quantity-input');
@@ -166,7 +157,7 @@ $(document).ready(function() {
 		});
     });
 
-    //====custom select
+//====custom select
     $(".select").each(function() {
         var classes = $(this).attr("class"),
             id      = $(this).attr("id"),
@@ -207,7 +198,7 @@ $(document).ready(function() {
         $(this).parents(".select").find(".select-trigger").text($(this).text());
     });
 
-    //====input===
+//====input===
     $('.input').on('focusout', function(){
 		if($(this).val().trim() != ''){
 			$(this).addClass('input-focus');
@@ -216,30 +207,20 @@ $(document).ready(function() {
 		}
 	});
 
-	//=====hint=====
+//=====hint=====
 	$('.hint').on('click', function(){
 		$(this).toggleClass('hint-active');
 	});
 
 
-    // zoom
-	var theImage,
-    theImageImg,
-    magnifier,
-    zoomImage,
-    magnifierHeight,
-    magnifierWidth,
-    theImageWidth,
-    theImageHeight,
-    zoomImageWidth,
-    zoomImageHeight,
-    zoomW,
-    zoomH;
+// ===== zoom function
+	var theImage, theImageImg, magnifier, zoomImage, magnifierHeight,  magnifierWidth, theImageWidth, theImageHeight, zoomImageWidth, zoomImageHeight,
+    zoomW, zoomH;
 
 	function startZoom(){
 		theImage = $('.hoverzoom'),
-	    theImageImg = $('.hoverzoom__img'),
-	    magnifier = $('.magnifier'),
+		theImageImg = $('.hoverzoom__img'),
+		magnifier = $('.magnifier'),
 		zoomImage = $('.zoom__image'),
 		magnifierHeight = 200,
 		magnifierWidth = 200,
@@ -247,84 +228,151 @@ $(document).ready(function() {
 		theImageHeight = parseInt(theImage.height()),
 		zoomImageWidth = parseInt(zoomImage.width()),
 		zoomImageHeight = parseInt(zoomImage.height()),
-		zoomW = theImageWidth / magnifierWidth * parseInt(zoomImage.width()),
-		zoomH = theImageHeight / magnifierHeight * parseInt(zoomImage.height());
+		zoomW = theImageWidth/magnifierWidth* parseInt(zoomImage.width()),
+		zoomH = theImageHeight/magnifierHeight* parseInt(zoomImage.height());
 
 		// set magnifier width and height 
-		magnifier.height(magnifierHeight+"px"); 
-		magnifier.width(magnifierWidth+"px"); 
+		magnifier.height(magnifierHeight+"px").width(magnifierWidth+"px"); 
 
 		//add img clone to zoom image
 		var img = new Image(); 
 		img.src = theImageImg.attr('src'); 
 		zoomImage.html(img);
-		zoomImage.find('img').width(zoomW +'px');
+		zoomImage.find('img').width(zoomW +'px').height(zoomH + 'px');
+	}
+
+	function generateZoom(){
+		theImage.on('mousemove', function(event){
+	    var imgPosX = theImage.offset().left,
+	        imgPosY = theImage.offset().top,
+	        Xstart = event.clientX - imgPosX,
+			    Ystart = event.clientY -imgPosY,
+	        posX, 
+	        zoomX,
+			    zoomY;
+	    
+	    if(Xstart<magnifierWidth/2){
+			posX=0;
+			zoomX=0;
+	    } else if(Xstart>(theImageWidth-magnifierWidth/2)){
+	        
+	        posX = 'unset';
+	        //zoomX = (zoomImageWidth / zoomW * 100) - magnifierWidth/2;
+	        zoomX = magnifierWidth/theImageWidth*100 - 100;
+	    } else {
+	        var x = Xstart-magnifierWidth/2;
+	        posX = x +"px";
+	        zoomX = - x/theImageWidth*100;
+	    };
+			var posY;
+	    if(Ystart<magnifierHeight/2){
+			posY=0;
+			zoomY=0;
+	    } else if(Ystart>(theImageHeight-magnifierHeight/2)){
+	        posY = 'unset';
+	        //zoomY =  (zoomImageHeight / zoomH * 100) - magnifierHeight;
+	        zoomY = magnifierHeight/theImageHeight*100 - 100;
+	    } else {
+	        var y = Ystart-magnifierHeight/2;
+	        posY = y+"px";
+	        zoomY = - y/theImageHeight*100;
+	    };
+			
+			magnifier.css({opacity: 1}); 
+			magnifier.css({left: posX}); 
+			magnifier.css({top: posY});
+			zoomImage.addClass('zoom__image-active').find('img').css({transform: "translateX("+zoomX+"%) translateY("+zoomY+"%)"}); 
+	  });
+	}
+
+	function removeZoom(){
+		magnifier.css({opacity: 0});
+		zoomImage.removeClass('zoom__image-active');
+	}
+
+	function destroyZoom(){
+		magnifier.height("0px").width("0px");
+		zoomImage.find('img').width('0px').height('0px');
+		theImage.off('mousemove');
+		theImage.off('mouseenter'); 
+		theImage.off('mouseleave');
+		zoomImage.removeClass('zoom__image-active');
+	}
+
+//===== product slider =====
+
+	var slider = $('.vertical__slider');
+	slider.on('init', function(){
+		$('.bg-img__item').removeClass('hoverzoom__img');
+		$('.slick-current .bg-img__item').addClass('hoverzoom__img');
+		startZoom();
+	});
+	slider.slick({
+	    arrows: false,
+	    dots: true,
+	    vertical: true,
+	    customPaging : function(slick, i) {
+	       // var nav = $(slick.$slides[i]).children('div').html();
+	        var img = new Image(); 
+			img.src = $(slick.$slides[i]).find('.bg-img__item').attr('src'); 
+			img.class = 'bg-img__item';
+	        return img;
+	    },
+	    appendDots: $('.vertical__bg'),
+	    responsive: [
+		    {
+				breakpoint: 992,
+				settings: {
+					customPaging :  function(slick, i) {
+						return'<div class="slick-dot"></div>'
+					}
+		      	}
+		    },
+		    {
+				breakpoint: 0,
+				settings: {
+					vertical: false,
+					settings: {
+					customPaging :  function(slick, i) {
+						return'<div class="slick-dot"></div>'
+					}
+					}
+		      	}
+		    }
+	    ]
+	});
+	slider.on('wheel', (function(e) {
+	  	e.preventDefault();
+	  	if (e.originalEvent.deltaY < 0) {
+	    	$(this).slick('slickNext');
+	  	} else {
+	    	$(this).slick('slickPrev');
+	  	}
+	}));
+
+	function initZoom(){
+		slider.on('afterChange', function(){
+			$('.bg-img__item').removeClass('hoverzoom__img');
+			$('.slick-current .bg-img__item').addClass('hoverzoom__img');
+			startZoom();
+		});
 
 		theImage.on('mouseenter', generateZoom); 
 		theImage.on('mouseleave', function(e){
 			removeZoom(); 
 			$(this).off('mousemove', generateZoom)
 		})
-	}
-
-	function generateZoom(){
-	  theImage.on('mousemove', function(event){
-	    var imgPosX = theImage.offset().left,
-	        imgPosY = theImage.offset().top,
-	        Xstart = event.clientX - imgPosX,
-			Ystart = event.clientY -imgPosY,
-	        posX, 
-	        zoomX,
-			zoomY;
-
-	    if(Xstart<magnifierWidth/2){
-	      posX=0;
-	      zoomX=0;
-	    } else if(Xstart>(theImageWidth-magnifierWidth/2)){
-	        posX = 'unset';
-	        zoomX = magnifierWidth/2 - (zoomImageWidth / zoomW * 100);
-	    } else {
-	        var x = Xstart-magnifierWidth/2;
-	        posX = x +"px";
-	        zoomX = x/theImageWidth*100;
-	    };
-			var posY;
-	    if(Ystart<magnifierHeight/2){
-	      posY=0;
-	      zoomY=0;
-	    } else if(Ystart>(theImageHeight-magnifierHeight/2)){
-	        posY = 'unset';
-	        zoomY = magnifierHeight/2 - (zoomImageHeight / zoomH * 100);
-	    } else {
-	        var y = Ystart-magnifierHeight/2;
-	        posY = y+"px";
-	        zoomY = y/theImageHeight*100;
-	    };
-			
-		magnifier.css({opacity: 1}); 
-		magnifier.css({left: posX}); 
-		magnifier.css({top: posY});
-	    zoomImage.addClass('zoom__image-active').find('img').css({transform: "translateX("+-zoomX+"%) translateY("+-zoomY+"%)"}); 
-	  });
-	}
-
-	function removeZoom(){
-		magnifier.css({opacity: 0});
-		zoomImage.removeClass('zoom__image-active')
-	}
-
-	if($('.hoverzoom').length > 0){
 		startZoom();
-		$( window ).resize(startZoom);
-	}
+	};
 
-	//===== product slider =====
-	// $('.slider').slick({
-	// 	arrows: false
-
-	// });
-	
-
-
-
+	if($('.hoverzoom').length > 0 && $('.max-991').css("display") != 'block'){
+		initZoom()
+	}	
+	$( window ).resize(function(){
+		if($('.max-991').css("display") === 'block'){
+			destroyZoom();
+		} else{
+			initZoom()
+		}
+	});
 });

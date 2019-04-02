@@ -3,36 +3,36 @@
 ?>
 
 <div class="content vertical">
-	<div class="vertical__bg-img ">
-		<div class="hoverzoom">
-			<div class="magnifier"></div>
-			<img id="productImage1" class="bg-img__item bg-img__item-active hoverzoom__img" src="img/product1.jpg" alt="photo"  data-large-img-url="img/product1.jpg">
-			<img id="productImage2" class="bg-img__item" src="img/product-1.2.jpg" alt="Комплект постельного белья">
-			<img id="productImage3" class="bg-img__item" src="img/product-1.3.jpg" alt="Комплект постельного белья">
-			<img id="productImage4" class="bg-img__item" src="img/product-1.4.jpg" alt="Комплект постельного белья">
+	<div class="vertical__bg">
+		<div class="vertical__bg-img">
+			<div class="hoverzoom">
+				<!-- <button id="zoom" class="btn__zoom btn__icon btn__icon-empty" data-fancybox=""><span class="icon-del"></span></button> -->
+				<div class="magnifier"></div>
+				<div class="vertical__slider">
+					<a class="vertical__slid" data-fancybox="gallery" href="img/product1.jpg">
+						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product1.jpg"><span class="icon-del"></span></a> -->
+						<img class="bg-img__item" src="img/product1.jpg" alt="Комплект">
+					</a>
+					<a class="vertical__slid" data-fancybox="gallery" href="img/product-1.4.jpg">
+						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product-1.4.jpg"><span class="icon-del"></span></a> -->
+						<img class="bg-img__item" src="img/product-1.4.jpg" alt="Комплект">
+					</a>
+					<a class="vertical__slid" data-fancybox="gallery" href="img/product-1.2.jpg">
+						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product-1.2.jpg"><span class="icon-del"></span></a> -->
+						<img class="bg-img__item" src="img/product-1.2.jpg" alt="Комплект">
+					</a>
+					<a class="vertical__slid" data-fancybox="gallery" href="img/product-1.3.jpg">
+						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product-1.3.jpg"><span class="icon-del"></span></a> -->
+						<img class="bg-img__item" src="img/product-1.3.jpg" alt="Комплект">
+					</a>
+				</div>
+				<div class="zoom__image"></div>
+			</div>
 		</div>
-
-	</div>
-	<div class="zoom__image"></div>
-	<div class="vertical__gallery">
-		<div class="vertical__item" data-id="productImage1">
-			<img class="img__full img__center" src="img/product1.jpg" alt="Комплект постельного белья">
-		</div>
-		<div class="vertical__item" data-id="productImage2">
-			<img class="img__full img__center" src="img/product-1.2.jpg" alt="Комплект постельного белья">
-		</div>
-		<div class="vertical__item" data-id="productImage3">
-			<img class="img__full img__center" src="img/product-1.3.jpg" alt="Комплект постельного белья">
-		</div>
-		<div class="vertical__item" data-id="productImage4">
-			<img class="img__full img__center" src="img/product-1.4.jpg" alt="Комплект постельного белья">
-		</div>
-
-	</div>
-
+	</div>	
 	<div class="vertical__wrap">
 		<div class="vertical__content">
-			<h1 class="h1 mb-2">Комплект постельного белья: Черника</h1>
+			<h1 class="h1 mb-md-2 mb-1">Комплект постельного белья: Черника</h1>
 			<p class="mb-0">Универсальный пастельный оттенок, который импонирует практически ко всем интерьерам. Он не требователен в уходе и пользуется чуть-ли не самой большой популярностью среди всех расцветок. </p>
 			<p class="mt-0">Ммм, кажется, это что-то среднее между фиолетовым и серым.</p>
 			<p class="text-notify">Скоро приедет</p>
@@ -146,7 +146,7 @@
 		include 'sidebar.php';
 	?>
 
-</div>	
+</div>
 
 <?php
 	include 'footer.php';

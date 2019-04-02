@@ -32,6 +32,7 @@
 	<!-- Finish Preloader -->
 
 	<div class="max-767"></div>
+	<div class="max-991"></div>
 <header class="header">
 	<a href="/" class="header__logo">
 		<img class="logo__img" src="img/logo.svg" alt="shana текстиль">

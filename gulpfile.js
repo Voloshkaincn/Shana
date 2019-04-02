@@ -32,9 +32,7 @@ gulp.task('createJsLibs', function(){
 	return gulp.src([
 			'app/libs/jquery/dist/jquery.min.js',
 			'app/libs/slick-carousel/slick.js',
-			// 'app/libs/Event/Event.js',
-			// 'app/libs/Magnifier/Magnifier.js',
-			// 'app/libs/Product-Carousel/src/jquery.exzoom.js'
+			'app/libs/fancybox/dist/jquery.fancybox.min.js',
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglifyjs())

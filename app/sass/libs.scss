@@ -1,6 +1,7 @@
 /* CSS Hacks. Scrollbars, placeholders etc. */
 @import "lib-components/css-hacks";
 
+
 $grid-gutter-width: 20px;
 
 /* Bootstrap */
@@ -25,5 +26,5 @@ $spacers: map-merge(
 
 /* Slick slider */
 @import "lib-components/slick";
-@import "../libs/Magnifier/magnifier.css";
+@import "../libs/fancybox/dist/jquery.fancybox.min.css";
 

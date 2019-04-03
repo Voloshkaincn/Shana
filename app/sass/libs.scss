@@ -21,8 +21,27 @@ $spacers: map-merge(
   ),
   $spacers
 );
+$light: #656565;
 
 @import '../libs/bootstrap-4.3.1/scss/utilities/_spacing.scss';
+// @import '../libs/bootstrap-4.3.1/scss/mixins/_text-truncate.scss';
+// @import '../libs/bootstrap-4.3.1/scss/mixins/_hover.scss';
+// @import '../libs/bootstrap-4.3.1/scss/mixins/_deprecate.scss';
+// @import '../libs/bootstrap-4.3.1/scss/mixins/_text-hide.scss';
+// @import '../libs/bootstrap-4.3.1/scss/mixins/_text-emphasis.scss';
+// @import '../libs/bootstrap-4.3.1/scss/utilities/_text.scss';
+
+// Responsive alignment
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .text#{$infix}-left   { text-align: left !important; }
+    .text#{$infix}-right  { text-align: right !important; }
+    .text#{$infix}-center { text-align: center !important; }
+  }
+} 
 
 /* Slick slider */
 @import "lib-components/slick";

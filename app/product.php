@@ -6,25 +6,21 @@
 	<div class="vertical__bg">
 		<div class="vertical__bg-img">
 			<div class="hoverzoom">
-				<!-- <button id="zoom" class="btn__zoom btn__icon btn__icon-empty" data-fancybox=""><span class="icon-del"></span></button> -->
+				<button id="zoom" class="btn__zoom btn__icon btn__icon-empty"><span class="icon-del"></span></button>
 				<div class="magnifier"></div>
 				<div class="vertical__slider">
-					<a class="vertical__slid" data-fancybox="gallery" href="img/product1.jpg">
-						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product1.jpg"><span class="icon-del"></span></a> -->
+					<div class="vertical__slid">
 						<img class="bg-img__item" src="img/product1.jpg" alt="Комплект">
-					</a>
-					<a class="vertical__slid" data-fancybox="gallery" href="img/product-1.4.jpg">
-						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product-1.4.jpg"><span class="icon-del"></span></a> -->
+					</div>
+					<div class="vertical__slid">
 						<img class="bg-img__item" src="img/product-1.4.jpg" alt="Комплект">
-					</a>
-					<a class="vertical__slid" data-fancybox="gallery" href="img/product-1.2.jpg">
-						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product-1.2.jpg"><span class="icon-del"></span></a> -->
+					</div>
+					<div class="vertical__slid">
 						<img class="bg-img__item" src="img/product-1.2.jpg" alt="Комплект">
-					</a>
-					<a class="vertical__slid" data-fancybox="gallery" href="img/product-1.3.jpg">
-						<!-- <a class="btn__zoom btn__icon btn__icon-empty" data-fancybox="gallery" href="img/product-1.3.jpg"><span class="icon-del"></span></a> -->
+					</div>
+					<div class="vertical__slid">
 						<img class="bg-img__item" src="img/product-1.3.jpg" alt="Комплект">
-					</a>
+					</div>
 				</div>
 				<div class="zoom__image"></div>
 			</div>
@@ -38,21 +34,22 @@
 			<p class="text-notify">Скоро приедет</p>
 			<form action="#">
 				<div class="variation mt-2 mb-1">
+					<div class="variation__item-checked"><span>Выберете размер</span></div>
 					<div class="variation__item">
 						<input class="variation__input" id="size-1.5" type="radio" name="size">
-						<label for="size-1.5" class="variation__label">1,5-спальный</label>						
+						<label for="size-1.5" class="variation__label" value="1,5-спальный">1,5-спальный</label>						
 					</div>
 					<div class="variation__item">
 						<input class="variation__input" id="size-2" type="radio" name="size">
-						<label for="size-2" class="variation__label">2-спальный</label>						
+						<label for="size-2" class="variation__label" value="2-спальный">2-спальный</label>						
 					</div>
 					<div class="variation__item">
 						<input class="variation__input" id="euro" type="radio" name="size">
-						<label for="euro" class="variation__label">Евро</label>						
+						<label for="euro" class="variation__label" value="Евро">Евро</label>						
 					</div>
 					<div class="variation__item">
 						<input class="variation__input" id="famaly" type="radio" name="size">
-						<label for="famaly" class="variation__label">Семейный</label>						
+						<label for="famaly" class="variation__label" value="Семейный">Семейный</label>						
 					</div>			
 				</div>
 				<div class="tabs">
@@ -60,7 +57,8 @@
 					<div class="tab" data-tab="characteristic ">Характеристики</div>
 				</div>
 				<div class="tabs__content">
-					<div id="complectation" class="tab__content tab__content-active" style="display: block">
+					<div class="tab-mobil tab"data-tab="complectation" >Что входит в комплект?</div>
+					<div id="complectation" class="tab__content tab__content-active">
 						<div class="row m-0">
 							<div class="checkbox">
 								<input id="sheet" type="checkbox" class="checkbox__input">
@@ -104,8 +102,8 @@
 				  			</div>
 						</div>
 					</div>
-					
-					<div id="characteristic" class="tab__content">
+					<div class="tab-mobil tab" data-tab="characteristic ">Характеристики</div>
+					<div id="characteristic" class="tab__content" style="display: none">
 						<table class="characteristic__table table-light">
 							<tr>
 								<td class="text-light">Материал</td>
@@ -129,15 +127,15 @@
 							</tr>
 						</table>
 					</div>
-					<div class="hr-line-s"></div>
-					<div class="product__price">2890 грн.</div>
-					<div class="btn__full btn mb-1">В корзину</div>
-					<div class="text-secondary mt-1">
-						Не нашёл нужного размера? Тогда скорее звони к нам! 
-					</div>
-					<div class="text-secondary">
-						Мы шьём по индивидуальным меркам.
-					</div>
+					<div class="hr-line-s d-none d-md-block"></div>
+				</div>
+				<div class="product__price"><span class='text text-light d-md-none mr-3'>Итого:</span>2890 грн.</div>
+				<div class="btn__full btn mb-1 mx-auto mx-md-0">В корзину</div>
+				<div class="text-secondary mt-1 text-center text-md-left">
+					Не нашёл нужного размера? Тогда скорее звони к нам! 
+				</div>
+				<div class="text-secondary text-center text-md-left">
+					Мы шьём по индивидуальным меркам.
 				</div>
 			</form>			
 		</div>

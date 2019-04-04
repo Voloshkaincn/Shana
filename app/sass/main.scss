@@ -120,6 +120,10 @@ label{
 	&__center{
 		object-position: center;
 	}
+	&__contain{
+		object-fit: contain;
+    	max-height: 100%;
+	}
 }
 .btn{
 	height: 36px;
@@ -349,6 +353,7 @@ label{
 }
 .tab{
 	width: 100%;
+	cursor: pointer;
 	text-align: center;
 	padding: 20px;
 	border-bottom: 1px solid rgba(196, 196, 196, 0.2);
@@ -384,6 +389,9 @@ label{
 	&__icon {
 		font-size: 22px;
 		margin-bottom: 15px;
+		@media (max-width: 767px), (max-height: 460px){
+			margin-bottom: 0;
+		}
 	}
 }
 .header{
@@ -401,7 +409,7 @@ label{
 	&__logo {
 		margin-bottom: 40px;
 		width: 100%;
-		z-index: 9;
+		z-index: 5;
 		display: block;
 		@media(max-width: 767px), (max-height: 460px){
 			margin-bottom: 0;
@@ -486,6 +494,9 @@ label{
 		}
 		@media(max-width: 991px){
 			margin-left: 170px;
+		}
+		@media (max-height: 700px){
+			margin-top: 20px;
 		}
 		@media(max-width: 767px), (max-height: 460px){
 			margin-left: 0;
@@ -581,6 +592,12 @@ label{
 			font-size: 18px;
 			font-weight: bold;
 			padding: 30px 0;
+			@media (max-height: 700px){
+					padding: 20px 0;
+			}
+			@media (max-height: 560px){
+					padding: 10px 0;
+			}	
 			@media(max-width: 767px), (max-height: 460px){
 				padding: 15px 0;
 			}
@@ -729,6 +746,7 @@ label{
 	position: fixed;
 	top: 90px;
 	right: 20px;
+	z-index: 6;
 	@media (max-width: 1199px){
 		right: 10px;
 	}
@@ -1177,6 +1195,9 @@ label{
 	width: 10px;
 	height: 10px;
 }
+.vertical__slid{
+	height: 100%;
+}
 .bg-img__item{
 	z-index: 1;
 	position: absolute;
@@ -1293,6 +1314,14 @@ label{
 	    line-height: 22px;
 	    font-size: 9px;
 	    cursor: pointer;
+	    @media(max-width: 767px), (max-height: 460px){
+    		right: unset;
+		    left: 33.33%;
+		    margin-left: -15px;
+    	}
+    	@media(max-width: 540px){
+    		left: 100%;
+    	}
 	}
 }
 .catalog{
@@ -1402,7 +1431,11 @@ label{
 	@media(max-width: 540px){
 		width: 50%;
 		height: 50vw;
+		.card__name{
+			bottom: 20px;
+		}
 	}
+
 }
 .products__item{
 	width: 33.33333%;
@@ -1467,12 +1500,13 @@ label{
 			    background: url(../img/svg/arrow.svg);
 			    width: 12px;
 			    height: 5px;
-			    position: absolute;
+			    position: absolute; 
 			    top: 20px;
 			    right: 20px;
+			    transform: rotate(180deg);
 			    transition: all 0.5s;
 			    .variation-open &{
-			    	transform: rotate(180deg);
+			    	transform: rotate(0deg);
 			    }
 		    }
 
@@ -1719,6 +1753,10 @@ input[type=number]{
 	height: 100vh;
 	padding-right: 0px;
 	display: flex;
+	@media(max-width: 767px){
+		flex-wrap: wrap;
+		height: calc(100vh - 70px);
+	}
 	&__left{
 		width: 25vw;
 		min-width: 300px;
@@ -1727,18 +1765,45 @@ input[type=number]{
 		overflow: hidden;
 		display: flex;
     	flex-direction: column;
+    	@media(max-width: 1024px){
+    		min-width: 250px;
+    	}
+    	@media(max-width: 767px), (max-height: 460px){
+    		width: 100%;
+			min-width: unset;
+			height: auto;
+    	}
 	}
 	&__sidebar{
 		overflow: auto;
 		width: 100%;
 		height: 100%;
 		padding: 40px 20px 0;
+		@media(max-width: 1024px){
+    		padding: 20px 10px 0;
+    	}
+    	@media(max-width: 767px), (max-height: 460px){
+    		padding: 10px 20px 0;
+    	}
 	}
 	&__card{
 		margin-bottom: 40px;
+		@media(max-width: 767px), (max-height: 460px){
+    		display: flex;
+    	}
+    	@media(max-width: 540px){
+    		display: block;
+    	}
 		.card{
 			padding: 0;
 			height: calc(100vw / 4 * 0.745);
+			@media(max-width: 767px), (max-height: 460px){
+				width: 33.33%;
+				height: unset;
+			}
+			@media(max-width: 540px){
+				width: 100%;
+			}
 		}
 	}
 	&__price{
@@ -1750,6 +1815,9 @@ input[type=number]{
 	}
 	&__footer{
 		padding: 20px;
+		@media(max-width: 991px){
+
+		}
 	}
 	&__total{
 		font-weight: bold;
@@ -1760,6 +1828,13 @@ input[type=number]{
 		padding: 60px 40px 0;
 		width: 100%;
 		overflow: auto;
+		@media(max-width: 1024px){
+    		padding: 40px;
+    	}
+    	@media(max-width: 767px), (max-height: 460px){
+    		overflow: unset;
+    		padding: 20px;
+    	}
 	}
 	&__answer{
 		position: fixed;
@@ -1815,6 +1890,12 @@ input[type=number]{
 	cursor: pointer;
 	position: relative;
 	order: 2;
+	@media(max-width: 767px), (max-height: 460px){
+		display: none;
+	}
+	@media(max-width: 540px){
+		display: block;
+	}
 	&:before{
 		content: "";
 	    width: 200%;
@@ -1825,44 +1906,56 @@ input[type=number]{
 	}
 	&.hint-active{
 		& + .hint__content{
-			//display: block;
 			padding: 20px 0;
-			max-height: 50vh;
+			max-height: 700px;
+			@media(max-width: 767px), (max-height: 460px){
+				padding: 0;
+				max-height: unset;
+			}
+			@media(max-width: 540px){
+				padding: 10px 0;
+				max-height: 700px;
+			}
 		}
 	}
 	&__content{
-		//display: none;
-		//font-size: 11px;
-		//line-height: 25px;
-		//padding: 20px 0;
     	width: 100%;
 		padding: 0;
 		max-height: 0;
-		transition: all 0.5s;
+		transition: all 0.5s ease-out;
 		overflow: hidden;
-		//position: absolute;
-	    //bottom: 0;
 	    background: #fff;
-	    //box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
-	    //width: 350px;
 	    text-align: center;
 	    z-index: 4;
-	 //    &:hover{
-		// 	padding: 20px 0;
-		// 	max-height: 50vh;
-		// }
+	    @media(max-width: 767px), (max-height: 460px){
+	    	max-height: unset;
+	    }
+	    @media(max-width: 540px){
+    		max-height: 0;
+    	}
 	}
 	&__title{
 		color: $text-color;
 		margin-bottom: 20px;
 		text-align: left;
 		line-height: 1.3;
+		@media(max-width: 1024px){
+			margin-bottom: 10px;
+		}
 	}
 	&__wrap{
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: end;
+		@media(max-width: 767px), (max-height: 460px){
+			width: 65%;
+    		padding: 0 0 0 20px;
+		}
+		@media(max-width: 540px){
+			padding: 0;
+			width: 100%;
+		}
 		.basket__price{
 			order: 2;
 		}
@@ -1879,6 +1972,9 @@ input[type=number]{
 		&:last-of-type{
 			margin-bottom: 20px;
 		}
+		@media(max-width: 1024px){
+			padding-left: 28px;
+		}
 	}
 	&-decor{
 		width: 31px;
@@ -1894,6 +1990,9 @@ input[type=number]{
 		position: absolute;
 		left: 0;
 		top: 2px;
+		@media(max-width: 1024px){
+			width: 21px;
+		}
 	}
 }
 .form{
@@ -1901,14 +2000,29 @@ input[type=number]{
 		margin-bottom: 20px;
 		display: flex;
     	align-items: center;
+    	@media (max-width: 991px){
+			flex-wrap: wrap;
+		}
+		@media (max-width: 767px){
+			flex-wrap: nowrap;
+		}
+		@media (max-width: 540px){
+			flex-wrap: wrap;
+		}
 	}
 	&__desc {
 		font-size: 11px;
 		color: $secondary-text-color;
+		@media(max-width: 991px){
+			padding: 5px 20px 0;
+    		line-height: 1.2;
+    		max-width: 325px;
+		}
 	}
 }
 .input {
 	width: 305px;
+	max-width: 100%;
 	height: 32px;
 	border: 1px solid rgba(196, 196, 196, 0.5);
 	background: transparent;
@@ -1919,8 +2033,14 @@ input[type=number]{
   	display: inline-block;
   	transition: all 0.3s;
   	padding-top: 5px;
+  	@media(max-width: 540px){
+  		width: 100%;
+  	}
 	&__wrap{
 		position: relative;
+		@media(max-width: 540px){
+	  		width: 100%;
+	  	}
 	}
 	&__placeholder{
 		color: #C4C4C4;
@@ -1974,10 +2094,16 @@ textarea{
 	margin-right: 20px;
 	position: relative;
   	display: inline-block;
+  	@media(max-width: 540px){
+	  	width: 100%;
+	  }
 	&-wrapper {
 	  position: relative;
 	  display: inline-block;
 	  user-select: none;
+	  @media(max-width: 540px){
+	  	width: 100%;
+	  }
 	}
 	&-wrapper select {
 	  display: none;
@@ -2108,6 +2234,9 @@ $star_size: 24px;
   display: inline-flex;
   flex-direction: row-reverse;
   vertical-align: middle;
+  @media(max-width: 767px), (max-height: 460px){
+  	    margin-right: 40px;
+  }
   &__star{
   	@extend .iconmoon;
     display: inline-block;
@@ -2154,6 +2283,11 @@ $star_size: 24px;
 	display: none;
 }
 .blog{
+	&__row{
+		@media(max-width: 767px), (max-height: 460px){
+			margin: 0;
+		}
+	}
 	&__item{
 		display: block;
 		width: 33.33%;
@@ -2164,11 +2298,19 @@ $star_size: 24px;
 				transform: scale(1.05);		
 			}
 		}
+		@media(max-width: 567px), (max-height: 460px){
+			width: 100%;
+			text-align: center;
+		}
 	}
 	&__img{
 		transition: all 0.3s;
 		max-height: 80%; 
 		display: block;
+		margin: 0 auto;
+		@media(max-width: 567px), (max-height: 460px){
+			max-height: 200px;
+		}
 	}
 }
 .post{

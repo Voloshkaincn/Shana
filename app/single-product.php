@@ -5,11 +5,16 @@
 <div class="content vertical">
 	<div class="vertical__bg-img ">
 		<div class="hoverzoom">
-		<div class="magnifier"></div>
-		<img id="productImage1" class="bg-img__item bg-img__item-active hoverzoom__img" src="img/single-product.jpg" alt="photo"  data-large-img-url="img/product1.jpg">
+			<button id="zoom" class="btn__zoom btn__icon btn__icon-empty"><span class="icon-del"></span></button>
+			<div class="magnifier"></div>
+			<div class="vertical__slider">
+				<div class="vertical__slid">
+					<img class="bg-img__item" src="img/single-product.jpg" alt="Комплект">
+				</div>
+			</div>
+			<div class="zoom__image"></div>
 		</div>
-	</div>
-	<div class="zoom__image"></div>
+	</div>	
 	<div class="vertical__wrap">
 		<div class="vertical__content">
 			<h1 class="h1 mb-2">Наволочка “Совы”</h1>
@@ -20,7 +25,8 @@
 					<div class="tab" data-tab="characteristic ">Характеристики</div>
 				</div>
 				<div class="tabs__content">
-					<div id="complectation" class="tab__content tab__content-active" style="display: block">
+					<div class="tab-mobil tab"data-tab="complectation" >Какой размер?</div>
+					<div id="complectation" class="tab__content tab__content-active">
 						<div class="">
 							<div class="quantity__row">
 								<div class="quantity">
@@ -48,8 +54,8 @@
 				  			</div>
 						</div>
 					</div>
-					
-					<div id="characteristic" class="tab__content">
+					<div class="tab-mobil tab" data-tab="characteristic ">Характеристики</div>
+					<div id="characteristic" class="tab__content"  style="display: none">
 						<table class="characteristic__table table-light">
 							<tr>
 								<td class="text-light">Материал</td>
@@ -73,19 +79,25 @@
 							</tr>
 						</table>
 					</div>
-					<div class="hr-line-s"></div>
-					<div class="product__price">90 грн.</div>
-					<div class="btn__full btn mb-1">В корзину</div>
-					<div class="text-secondary mt-1">
-						Не нашёл нужного размера? Тогда скорее звони к нам! 
-					</div>
-					<div class="text-secondary">
-						Мы шьём по индивидуальным меркам.
-					</div>
+					<div class="hr-line-s  d-none d-md-block"></div>
+				</div>
+				<div class="product__price">
+					<span class='text text-light d-md-none mr-3'>Итого:</span>90 грн.
+				</div>
+				<div class="btn__full btn mb-1">В корзину</div>
+				<div class="text-secondary mt-1">
+					Не нашёл нужного размера? Тогда скорее звони к нам! 
+				</div>
+				<div class="text-secondary">
+					Мы шьём по индивидуальным меркам.
 				</div>
 			</form>			
 		</div>
 	</div>
+
+	<?php
+		include 'sidebar.php';
+	?>
 
 </div>	
 

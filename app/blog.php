@@ -6,7 +6,7 @@
 	<div class="content__header">
 		<h1 class="h1">Блог</h1>
 	</div>
-	<div class="row">
+	<div class="row blog__row">
 		<a href='blog-post.php' class="blog__item">
 			<img src="img/blog1.jpg" alt="" class="blog__img">
 			<div class="h3">Как выбрать самый-самый?</div>
@@ -20,6 +20,10 @@
 			<div class="h3">All inclusive или как дожить до старости с нашим постельным бельём</div>
 		</a>
 	</div>
+
+	<?php
+		include 'sidebar.php';
+	?>
 </div>
 
 <?php

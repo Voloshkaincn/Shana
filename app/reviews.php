@@ -8,7 +8,7 @@
 
 <div class="content vertical">
 	<div class="vertical__bg-img d-flex">
-		<img class="m-auto" src="img/svg/cat-for-reviews.svg" alt="photo">
+		<img class="m-auto img__contain" src="img/svg/cat-for-reviews.svg" alt="photo">
 	</div>
 	<div class="vertical__wrap">
 		<div class="vertical__content">
@@ -16,13 +16,13 @@
 			<p>Здесь ты можешь оставить свой отзыв про Shana Textile и почитать, что думают о нас наши клиенты.</p>
 			<form id="reviewForm"  class="review__form" action="#">
 				<div class="form__row row">
-					<div class="col-6">
+					<div class="col-12 col-sm-6 mb-1 mb-sm-0" >
 						<div class="input__wrap">
-							<input name="name" type="text" class="review__input input mr-2" autocomplete="off">
+							<input name="name" type="text" class="review__input input mr-sm-2" autocomplete="off">
 							<span class="input__placeholder">Имя*</span>
 						</div>
 					</div>
-					<div class="col-6">
+					<div class="col-12 col-sm-6">
 						<div class="input__wrap">
 							<input name="phone" type="phone" class="review__input input" autocomplete="off">
 							<span class="input__placeholder">Номер телефона*</span>
@@ -100,6 +100,10 @@
 			</div>
 		</div>
 	</div>
+
+	<?php
+		include 'sidebar.php';
+	?>
 
 </div>	
 

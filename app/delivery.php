@@ -4,7 +4,7 @@
 
 <div class="content vertical">
 	<div class="vertical__bg-img d-flex">
-		<img class="m-auto" src="img/svg/cat-for-delivery.svg" alt="photo">
+		<img class="img__contain m-auto" src="img/svg/cat-for-delivery.svg" alt="photo">
 	</div>
 	<div class="vertical__wrap">
 		<div class="vertical__content">
@@ -20,8 +20,11 @@
 			    	Доставка
 			    </div>
 			</div>
-			<div class="tabs__contant">
-			  	<div class="tab__content tab__content-active" id="payment" style="display: block">
+			<div class="tabs__content">
+				<div class="tab-mobil tab" data-tab="payment" >
+					<div class="tab__icon"><span class="icon-payment"></span></div>Оплата
+				</div>
+			  	<div class="tab__content tab__content-active" id="payment">
 			   		<ul class="list mb-2">
 			   			<li class="list__item">Наличными, при встрече</li>
 				   		<li class="list__item">Денежным переводом на карту Приват Банка или Monobank</li>
@@ -32,7 +35,10 @@
 				   	<p>Стоимость доставки зависит от веса, размера и места назначения. Ее определит перевозчик.</p>
 				   	<p>Если ты закажешь на сумму более 2000 грн., то доставка будет бесплатной.</p>
 			  	</div>
-			  	<div class="tab__content" id="delivery">
+			  	<div class="tab-mobil tab" data-tab="delivery" >
+			  		<div class="tab__icon"><span class="icon-delivery"></span></div>Доставка
+			  	</div>
+			  	<div class="tab__content" id="delivery" style="display: none">
 			    	<ul class="list mb-2">
 			   			<li class="list__item">Новая Почта</li>
 				   		<li class="list__item">Укрпочта</li>
@@ -48,6 +54,10 @@
 			</div>
 		</div>
 	</div>
+
+	<?php
+		include 'sidebar.php';
+	?>	
 
 </div>	
 

@@ -9,7 +9,7 @@
 <div class="content basket">
 	<div class="basket__left">
 		<div class="basket__sidebar">
-			<div class="px-1">
+			<div class="px-xl-1">
 				<div class="h1">Корзина</div>
 				<p>Сюда попали все товары, которые ты решил приобрести. Осталось только заполнить несколько полей и дело за нами!</p>	
 			</div>
@@ -61,7 +61,7 @@
 		</div>
 	</div>
 	<div class="basket__content">
-		<div class="h3 mb-3">Оформление заказа</div>
+		<div class="h3 mb-sm-3 mb-1">Оформление заказа</div>
 		<form action="#" id="basket__form">
 			<div class="form__row">
 				<div class="input__wrap">
@@ -117,6 +117,9 @@
 			<button class="btn btn__full mt-1">Заказать</button>
 		</form>
 	</div>
+	<?php
+		include 'sidebar.php';
+	?>
 </div>
 <div class="content basket__answer" style="display: none">
 	<div class="answer__wrap success">

@@ -6,7 +6,7 @@ var gulp 	 	     = require('gulp'),
 		cleanCSS = require('gulp-clean-css');
 		autoprefixer = require("gulp-autoprefixer"),
 		rename       = require("gulp-rename"),
-		browserSync  = require('browser-sync'),
+		browserSync  = require('browser-sync').create(),
 		sourcemaps = require('gulp-sourcemaps'),
 		cssnano = require('gulp-cssnano'),
 		iconfont = require('gulp-iconfont'),
@@ -22,9 +22,12 @@ gulp.task('compileSass', function(){
 	.pipe(cleanCSS())
     .pipe(cssnano())
     .pipe(rename({suffix: '.min'}))
+    .on('error', function (err) {
+            console.error('Error!', err.message);
+        })
     .pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.stream({ match: '**/*.css' }));
+	.pipe(browserSync.reload({stream: true}));
 });
 
 //Concat all library js files into libs.min.js
@@ -61,16 +64,20 @@ gulp.task('code', function(){
 });
 
 // LiveReload
-gulp.task('browserSync', function serverStart(){
-	browserSync({
-		proxy: "shana"
-	});
+// gulp.task('browserSync', function serverStart(){
+// 	browserSync.init({
+// 		proxy: "shana"
+// 	});
+// });
+gulp.task('browserSync', function() {
+    browserSync.init({
+        proxy: "shana"
+    });
 });
 
 
 // Watch
 gulp.task('watch', gulp.parallel('code', 'compileSass', 'createJsLibs', 'compressJs', 'browserSync', function startWatching(){
-	
 	gulp.watch('app/sass/**/*.{css,sass,scss}', gulp.parallel('compileSass'));
 	gulp.watch('app/js/common.js', gulp.parallel('compressJs'));
 	gulp.watch('app/**/*.{php,html}', gulp.parallel('code'));

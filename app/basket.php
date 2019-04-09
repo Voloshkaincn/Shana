@@ -114,7 +114,7 @@
 				</select>
 				<span class="form__desc">И укажи, как хочешь оплатить.</span>
 			</div>
-			<button class="btn btn__full mt-1">Заказать</button>
+			<button class="btn btn__full mt-1 mb-2">Заказать</button>
 		</form>
 	</div>
 	<?php

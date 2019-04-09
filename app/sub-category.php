@@ -5,7 +5,7 @@
 <div class="content  overflow-hidden">
 	<div class="content__header">
 		<div class="breadcrumb">
-			<a href="catalog.php">Каталог</a><span> / </span><a href="category.php">Постельное белье</a>
+			<a href="catalog.php">Каталог</a><span> / </span><a href="category.php">Постельное белье</a> / </span><a href="sub-category.php">Стайп-сатин</a>
 		</div>
 		<h1 class="h1">Страйп-сатин</h1>
 	</div>

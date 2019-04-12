@@ -22,23 +22,38 @@ $(document).ready(function() {
 	})
 	function menu(){
 		if($('.max-767').css("display") === 'block'){
+			// $('.menu__parent').on('click', function(){
+			// 	if(!$(this).hasClass('menu__parent-open')){
+			// 	    var el= $(this)
+			// 	    var list = el.parents('.menu__list');
+			// 	 	el.parents('.menu__list').slideUp('1000', function(){
+			// 	 		el.addClass('menu__parent-open');
+			// 	 		list.children('li:not(".menu__parent-open")').hide();
+			// 	 		list.slideDown('1000');
+			// 	 	})
+			// 	 	$('.menu__back').click(function(event){
+			// 	    	event.stopPropagation();
+			// 	    	list.slideUp('1000', function(){
+			// 	    		$('.menu__parent.menu__parent-open').removeClass('menu__parent-open');
+			// 	    		list.children('li').show();
+			// 	    		list.slideDown('1000')
+			// 	    	});
+			// 	    });
+			// 	}
+			// });
+
 			$('.menu__parent').on('click', function(){
-				if(!$(this).hasClass('menu__parent-open')){
-				    var el= $(this)
-				    var list = el.parents('.menu__list');
-				 	el.parents('.menu__list').slideUp('1000', function(){
-				 		el.addClass('menu__parent-open');
-				 		list.children('li:not(".menu__parent-open")').hide();
-				 		list.slideDown('1000');
-				 	})
-				 	$('.menu__back').click(function(event){
-				    	event.stopPropagation();
-				    	list.slideUp('1000', function(){
-				    		$('.menu__parent.menu__parent-open').removeClass('menu__parent-open');
-				    		list.children('li').show();
-				    		list.slideDown('1000')
-				    	});
-				    });
+				el = $(this);
+				if(!el.hasClass('menu__parent-open')){
+					$('.menu__parent').removeClass('menu__parent-open');
+			 		el.addClass('menu__parent-open');
+			 		
+			 		setTimeout(function(){
+		 				el.parents('.menu__list').addClass('menu__list-open')
+		 			} , 300);
+				} else {
+					el.removeClass('menu__parent-open');
+					el.parents('.menu__list').removeClass('menu__list-open');
 				}
 			});
 		}
@@ -328,7 +343,8 @@ $(document).ready(function() {
 				settings: {
 					customPaging :  function(slick, i) {
 						return'<div class="slick-dot"></div>'
-					}
+					},
+					vertical: false,
 		      	}
 		    },
 	    ]

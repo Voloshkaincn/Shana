@@ -84,11 +84,11 @@
 				<div class="product__price">
 					<span class='text text-light d-md-none mr-3'>Итого:</span>90 грн.
 				</div>
-				<div class="btn__full btn mb-1">В корзину</div>
-				<div class="text-secondary mt-1">
+				<div class="btn__full btn mb-1  mx-auto mx-md-0">В корзину</div>
+				<div class="text-secondary mt-1  text-center text-md-left">
 					Не нашёл нужного размера? Тогда скорее звони к нам! 
 				</div>
-				<div class="text-secondary">
+				<div class="text-secondary  text-center text-md-left">
 					Мы шьём по индивидуальным меркам.
 				</div>
 			</form>			

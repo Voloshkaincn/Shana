@@ -52,3 +52,14 @@
 ::-moz-placeholder          {color: #C4C4C4; font-family: 'Montserrat Alternates',sans-serif;}
 :-moz-placeholder           {color: #C4C4C4; font-family: 'Montserrat Alternates',sans-serif;}
 :-ms-input-placeholder      {color: #C4C4C4; font-family: 'Montserrat Alternates',sans-serif;}
+
+
+a, label{
+  -webkit-tap-highlight-color: transparent;
+}
+body{
+  -webkit-text-size-adjust: none;
+}
+input[type=text], input[type=submit], textarea{
+  -webkit-appearance: none;
+} 

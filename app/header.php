@@ -58,7 +58,7 @@
 		</div>
 	</a>
 </header>
-<div id="menu" class="menu">
+<div id="menu" class="menu" onmousedown="return false" onselectstart="return false">
 	<div class="menu__overlay"></div>
 	<div class="menu__wrap">
 		<form class="menu__search" action="#" method="post">
@@ -67,7 +67,7 @@
 			</button>
 			<input class="menu__input" type="text" placeholder="Поиск">			
 		</form>
-		<ul class="menu__list">
+		<ul class="menu__list" onmousedown="return false" onselectstart="return false">
 			<li class="menu__parent">
 				<div class="menu__back"><span class="icon-arrow"></span></div>
 				<div class="menu__item menu__item-lg">Постельное бельё

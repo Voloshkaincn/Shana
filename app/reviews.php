@@ -8,7 +8,7 @@
 
 <div class="content vertical">
 	<div class="vertical__bg-img d-flex">
-		<img class="m-auto img__contain" src="img/svg/cat-for-reviews.svg" alt="photo">
+		<img class="m-auto img__contain px-md-0 px-1" src="img/svg/cat-for-reviews.svg" alt="photo">
 	</div>
 	<div class="vertical__wrap">
 		<div class="vertical__content">

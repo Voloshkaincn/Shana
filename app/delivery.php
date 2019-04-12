@@ -4,7 +4,7 @@
 
 <div class="content vertical">
 	<div class="vertical__bg-img d-flex">
-		<img class="img__contain m-auto" src="img/svg/cat-for-delivery.svg" alt="photo">
+		<img class="img__contain m-auto px-md-0 px-1" src="img/svg/cat-for-delivery.svg" alt="photo">
 	</div>
 	<div class="vertical__wrap">
 		<div class="vertical__content">

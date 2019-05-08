@@ -36,21 +36,29 @@
 				<div class="variation mt-2 mb-1">
 					<div class="variation__item-checked"><span>Выберете размер</span></div>
 					<div class="variation__item">
-						<input class="variation__input" id="size-1.5" type="radio" name="size">
-						<label for="size-1.5" class="variation__label" value="1,5-спальный">1,5-спальный</label>						
+						<label class="variation__label">
+							<input class="variation__input" type="radio" name="size">
+							<span>1,5-спальный</span>
+						</label>						
 					</div>
 					<div class="variation__item">
-						<input class="variation__input" id="size-2" type="radio" name="size">
-						<label for="size-2" class="variation__label" value="2-спальный">2-спальный</label>						
+						<label class="variation__label">
+							<input class="variation__input" type="radio" name="size">
+							<span>2-спальный</span>
+						</label>						
 					</div>
 					<div class="variation__item">
-						<input class="variation__input" id="euro" type="radio" name="size">
-						<label for="euro" class="variation__label" value="Евро">Евро</label>						
+						<label class="variation__label">
+							<input class="variation__input" type="radio" name="size">
+							<span>Евро</span>
+						</label>						
 					</div>
 					<div class="variation__item">
-						<input class="variation__input" id="famaly" type="radio" name="size">
-						<label for="famaly" class="variation__label" value="Семейный">Семейный</label>						
-					</div>			
+						<label class="variation__label">
+							<input class="variation__input" type="radio" name="size">
+							<span>Семейный</span>
+						</label>						
+					</div>		
 				</div>
 				<div class="tabs">
 					<div class="tab tab-active"data-tab="complectation" >Что входит в комплект?</div>

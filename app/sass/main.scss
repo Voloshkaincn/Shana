@@ -1638,7 +1638,7 @@ label{
 	}
 	&__input{
 		display: none;
-		&:checked + .variation__label{
+		&:checked + span{
 			color: $main-color;
 			@media(max-width: 1199px){
 				color: #C4C4C4;

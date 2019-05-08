@@ -118,7 +118,15 @@ $(document).ready(function() {
 		vertical: true,
 		verticalSwiping: true,
 		asNavFor: '#mainSlider',
-		speed: 900
+		speed: 900,
+		responsive: [
+		    {
+				breakpoint: 768,
+				settings: {
+					vertical: false,
+		      	}
+		    },
+	    ]
 	});
 	$('#mainSlider').on('VoloChange', function(event, slick, currentSlide, nextSlide){
 		if(currentSlide != $('#mainImgSlider').slick('slickCurrentSlide')){

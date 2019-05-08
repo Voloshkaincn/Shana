@@ -58,7 +58,7 @@
 		</div>
 	</a>
 </header>
-<div id="menu" class="menu" onmousedown="return false" onselectstart="return false">
+<div id="menu" class="menu">
 	<div class="menu__overlay"></div>
 	<div class="menu__wrap">
 		<form class="menu__search" action="#" method="post">

@@ -94,22 +94,31 @@ $(document).ready(function() {
 //---------main slider------
 	$('#mainSlider').slick({
 		infinite: true,
+		//vertical: true,
 		verticalSwiping: true,
 		dots: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: false,
 		fade: true,
-		asNavFor: '#mainImgSlider'
+		asNavFor: '#mainImgSlider',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					verticalSwiping: false,
+		      	}
+	    	},
+	    ]
 	});
-	$('.main__slider').on('wheel', (function(e) {
-	  	e.preventDefault();
-	  	if (e.originalEvent.deltaY < 0) {
-	    	$(this).slick('slickNext');
-	  	} else {
-	    	$(this).slick('slickPrev');
-	  	}
-	}));
+	// $('.main__slider').on('wheel', (function(e) {
+	//   	e.preventDefault();
+	//   	if (e.originalEvent.deltaY < 0) {
+	//     	$(this).slick('slickNext');
+	//   	} else {
+	//     	$(this).slick('slickPrev');
+	//   	}
+	// }));
 	$('#mainImgSlider').slick({
 		infinite: true,
 		slidesToShow: 1,
@@ -124,6 +133,7 @@ $(document).ready(function() {
 				breakpoint: 768,
 				settings: {
 					vertical: false,
+					verticalSwiping: false,
 		      	}
 		    },
 	    ]

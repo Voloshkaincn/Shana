@@ -2166,6 +2166,9 @@ input[type=number]{
 	}
 }
 .input {
+	-webkit-text-fill-color: $text-color;; 
+    -webkit-opacity: 1;
+    color: $text-color; 
 	font-family: inherit;
 	width: 305px;
 	max-width: 100%;

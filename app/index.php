@@ -1,6 +1,11 @@
 <?php
 	include 'header.php';
 ?>
+<style>
+	.header{
+		background: rgba(255, 255, 255, 0.5);
+	}
+</style>
 	<a href="catalog.php" id="btnCatalog" class="btn__icon btn__icon-empty">
 		<img src="img/catalog-icon.svg" alt="catalog">
 	</a>

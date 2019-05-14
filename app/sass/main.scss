@@ -436,7 +436,7 @@ label{
 	@media(max-width: 767px), (max-height: 460px){
 		width: 100%;
 		height: 70px;
-		background: rgba(255, 255, 255, 0.5);
+		background: #fff;
 		padding: 11px 20px 11px;
 		display: flex;
 		align-items: center;
@@ -920,6 +920,9 @@ label{
 		opacity: 1;
 		height: 100%;
 		transition: all 0.5s 0.5s;
+		@media(max-width: 767px), (max-height: 460px){
+			z-index: 1;
+		}
 	}
 	&__link{
 		margin-bottom: 10px;
@@ -1108,7 +1111,7 @@ label{
 		padding-right: 0;
 		width: 100%;
 		margin-top: 70px;
-		height: calc(100vh - 70px);
+		height: auto;
     	overflow: auto;
     	-webkit-overflow-scrolling: touch;
 	}
@@ -1131,7 +1134,7 @@ label{
     @media (max-width: 767px), (max-height: 460px){
 	    flex-wrap: wrap;
 	    overflow: auto;
-	    height: calc(100vh - 70px);
+	    height: auto;
 	}
 	&__wrap{
 	    width: 100%;
@@ -1891,7 +1894,7 @@ input[type=number]{
 	display: flex;
 	@media(max-width: 767px){
 		flex-wrap: wrap;
-		height: calc(100vh - 70px);
+		height: auto;
 	}
 	&__left{
 		width: 25vw;
@@ -2165,8 +2168,14 @@ input[type=number]{
 		}
 	}
 }
+#basket__form{
+	transform: translateZ(0px) !important;
+}
 .input {
-	-webkit-text-fill-color: $text-color;; 
+	z-index: 1;
+	transform: translateZ(0px) !important;
+	-webkit-user-select: text;
+	-webkit-text-fill-color: $text-color;
     -webkit-opacity: 1;
     color: $text-color; 
 	font-family: inherit;
@@ -2221,11 +2230,11 @@ input[type=number]{
 		border-color: #ff1c1c;
 	}
 }
-input:-webkit-autofill {
-    -webkit-box-shadow: inset 0 0 0 50px #fff !important; /* Цвет фона */
-    -webkit-text-fill-color: #999 !important; /* цвет текста */
-    color: #999 !important; /* цвет текста */
-}
+// input:-webkit-autofill {
+//     -webkit-box-shadow: inset 0 0 0 50px #fff !important; /* Цвет фона */
+//     -webkit-text-fill-color: #999 !important; /* цвет текста */
+//     color: #999 !important; /* цвет текста */
+// }
 textarea{
 	&.input{
 		height: auto;

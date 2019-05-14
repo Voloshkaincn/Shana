@@ -60,6 +60,7 @@ a, label{
 body{
   -webkit-text-size-adjust: none;
 }
-input[type=text], input[type=submit], textarea{
-  -webkit-appearance: none;
+/*input[type=text], input[type=submit], textarea{
+ // -webkit-appearance: none;
 } 
+*/

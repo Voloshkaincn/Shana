@@ -16,7 +16,7 @@
 		<!-- Libs -->
 			<link rel="stylesheet" type="text/css" href="css/libs.min.css">
 		<!-- Common -->
-			<link rel="stylesheet" type="text/css" href="css/main.min.css">
+			<link rel="stylesheet" type="text/css" href="css/main.min.css?14.05.13.05">
 			<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500,700" rel="stylesheet">
 
 

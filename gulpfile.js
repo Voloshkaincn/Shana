@@ -64,16 +64,16 @@ gulp.task('code', function(){
 });
 
 // LiveReload
-// gulp.task('browserSync', function serverStart(){
-// 	browserSync.init({
-// 		proxy: "shana"
-// 	});
-// });
-gulp.task('browserSync', function() {
-    browserSync.init({
-        proxy: "shana"
-    });
+gulp.task('browserSync', function serverStart(){
+	browserSync.init({
+		proxy: "shana"
+	});
 });
+// gulp.task('browserSync', function() {
+//     browserSync.init({
+//         proxy: "shana"
+//     });
+// });
 
 
 // Watch

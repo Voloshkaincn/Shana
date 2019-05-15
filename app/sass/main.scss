@@ -141,8 +141,8 @@ label{
 	&__full{
 		background: $main-color;
 		position: relative;
-		box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.07);
 		color: #fff;
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
 		transition: all 0.3s;
 		z-index: 1;
 		// &:before{
@@ -194,7 +194,7 @@ label{
 	&__icon-full{
 		background: $main-color;
 		position: relative;
-		box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.07);
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.07);
 		color: #fff;
 		transition: all 0.3s;
 		z-index: 1;

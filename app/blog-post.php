@@ -4,6 +4,9 @@
 
 <div class="content">
 	<div class="content__header">
+		<div class="breadcrumb">
+			<a href="blog.php">Блог</a><span> / </span><a href="sub-category.php">All inclusive или как дожить до старости с нашим постельным бельём</a>
+		</div>
 		<h1 class="h1">All inclusive или как дожить до старости с нашим постельным бельём</h1>
 	</div>
 	<div class="post">
@@ -13,6 +16,10 @@
 			<p>Natus eveniet architecto tempora asperiores fugit, illo magni reiciendis unde consequatur iste repellendus quas laborum facilis consequuntur aliquam sed, animi aliquid est culpa? Distinctio temporibus, repellendus laborum iusto ut rerum.</p>
 			<p>Possimus consectetur, corrupti, quo eligendi temporibus illum nam soluta molestiae omnis quisquam, officia itaque nostrum, obcaecati voluptatibus distinctio ratione totam veritatis dolor deserunt! Natus dolorum corporis, perspiciatis ratione unde perferendis.</p>
 		</div>
+
+	<?php
+		include 'sidebar.php';
+	?>
 </div>
 
 <?php

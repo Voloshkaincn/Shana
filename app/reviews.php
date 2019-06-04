@@ -72,6 +72,12 @@
 				</div>
 				<p>Я уже можно сказать постоянный клиент Алекскредит. Работой компании доволен, постоянно получаю скидки, письма о новых акциях. Как по мне, это один з лучших кредиторов страны. Беру деньги только тут. Я уже можно сказать постоянный клиент Алекскредит. Работой компании доволен, постоянно получаю скидки, письма о новых акциях. Как по мне, это один з лучших кредиторов страны. Беру деньги толькь.</p>
 			</div>
+			<div class="review__block review__subcomment">
+				<div class="row mx-0">
+					<div class="review__name">Ann subcomment</div>
+				</div>
+				<p>Я уже можно сказать постоянный клиент Алекскредит. Работой компании доволен, постоянно получаю скидки, письма о новых акциях. Как по мне, это один з лучших кредиторов страны. Беру деньги только тут. Я уже можно сказать постоянный клиент Алекскредит. Работой компании доволен, постоянно получаю скидки, письма о новых акциях. Как по мне, это один з лучших кредиторов страны. Беру деньги толькь.</p>
+			</div>
 			<div class="review__block">
 				<div class="row mx-0">
 					<div class="review__name">Ann</div>
@@ -98,8 +104,22 @@
 				</div>
 				<p>Я уже можно сказать постоянный клиент Алекскредит. Работой компании доволен, постоянно получаю скидки, письма о новых акциях. Как по мне, это один з</p>
 			</div>
+			<div class="pagination">
+		  		<button class="pagination__arrow pagination__prev"></button>
+				<ul class="pagination__list">
+			      <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
+						<li class="pagination__item pagination__more">...</li>
+						<li class="pagination__item"><a class="pagination__link" href="#">6</a></li>
+						<li class="pagination__item"><a class="pagination__link pagination__link-active" href="#">7</a></li>
+						<li class="pagination__item"><a class="pagination__link" href="#">8</a></li>
+						<li class="pagination__item pagination__more">...</li>
+			      <li class="pagination__item"><a class="pagination__link" href="#">11</a></li>
+				</ul>
+			    <button class="pagination__arrow pagination__next"></button>
+			</div>
 		</div>
 	</div>
+	
 
 	<?php
 		include 'sidebar.php';

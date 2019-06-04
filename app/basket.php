@@ -82,6 +82,13 @@
 				</div>
 				<span class="form__desc">Мы позвоним тебе, чтобы уточнить детали твоей покупки.</span>
 			</div>
+			<div class="form__row">
+				<div class="input__wrap">
+					<input name="email" type="text" class="input" autocomplete="off">
+					<span class="input__placeholder">Email*</span>
+				</div>
+				<span class="form__desc">На который ты получишь реквизиты посылки.</span>
+			</div>
 			<div class="hr-line"></div>
 			<div class="form__row">
 				<select name="delivery" id="" class="select" placeholder="Способ доставки">

@@ -137,7 +137,7 @@
 					</div>
 					<div class="hr-line-s d-none d-md-block"></div>
 				</div>
-				<div class="product__price"><span class='text text-light d-md-none mr-3'>Итого:</span>2890 грн.</div>
+				<div class="product__price"><span class='text text-light d-md-none mr-3'>Итого:</span><span>2890</span> грн.</div>
 				<div class="btn__full btn mb-1 mx-auto mx-md-0">В корзину</div>
 				<div class="text-secondary mt-1 text-center text-md-left">
 					Не нашёл нужного размера? Тогда скорее звони к нам! 

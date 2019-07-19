@@ -66,7 +66,7 @@ gulp.task('code', function(){
 // LiveReload
 gulp.task('browserSync', function serverStart(){
 	browserSync.init({
-		proxy: "shana"
+		proxy: "shana.tanya"
 	});
 });
 // gulp.task('browserSync', function() {

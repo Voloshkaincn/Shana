@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+// Товар в корзине Message
+	$('.basket_btn').click(function(){
+		$('.basket_update_info').addClass('active');
+		setTimeout(function () {
+      $('.basket_update_info').removeClass('active');
+    }, 5000)
+	});
+
 //--------menu button-----
 	$('#menuButton').on('click', function(){
 		if($(this).hasClass('btn__menu-open')){

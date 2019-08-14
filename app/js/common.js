@@ -109,6 +109,7 @@ $(document).ready(function() {
 		slidesToScroll: 1,
 		arrows: false,
 		fade: true,
+		speed: 900,
 		asNavFor: '#mainImgSlider',
 		responsive: [
 			{
